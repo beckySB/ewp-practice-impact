@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -198,7 +199,7 @@
     .compare-divider-dark { width: 100%; height: 1px; background: var(--gold-20); }
     .compare-details { font-size: 20px; line-height: 1.8; text-align: center; }
 
-    /* ─── Family Office Light ─── */
+    /* ─── Fractional Family Office ─── */
     .practice-model {
       background: var(--cream);
       padding: 100px 120px;
@@ -454,6 +455,16 @@
     .footer .footer-contact { font-size: 18px; color: rgba(255,255,255,0.69); line-height: 1.8; text-align: center; max-width: 500px; }
     .footer .footer-disclaimer { font-size: 12px; color: rgba(255,255,255,0.38); line-height: 1.8; text-align: center; max-width: 700px; }
 
+    /* ─── Icons ─── */
+    .icon-gold { color: var(--gold); width: 28px; height: 28px; }
+    .icon-gold-lg { color: var(--gold); width: 32px; height: 32px; }
+    .icon-cream { color: var(--cream); width: 28px; height: 28px; }
+    .compare-card .icon-gold { margin-bottom: 8px; }
+    .philosophy-card .icon-gold { margin-bottom: 4px; }
+    .pillar-card .icon-gold { margin-bottom: 4px; }
+    .stream-card .icon-gold { margin-bottom: 4px; }
+    .platform-card .icon-gold { margin-bottom: 4px; }
+
     /* ─── Responsive ─── */
     @media (max-width: 1024px) {
       .hero { padding: 60px 40px; }
@@ -522,6 +533,7 @@
     <h2 class="section-heading">Same Advisor. Different Practice. Different Outcome.</h2>
     <div class="compare-row">
       <div class="compare-card generalist">
+        <i data-lucide="trending-down" class="icon-gold"></i>
         <div class="compare-sublabel">GENERALIST PRACTICE</div>
         <div class="compare-revenue">$150K–$280K</div>
         <div class="compare-annual">annual revenue</div>
@@ -529,6 +541,7 @@
         <p class="compare-details">100–150 clients &nbsp;•&nbsp; $3K–$6K per household<br>Linear growth &nbsp;•&nbsp; Transactional revenue</p>
       </div>
       <div class="compare-card specialized">
+        <i data-lucide="trending-up" class="icon-gold"></i>
         <div class="compare-sublabel">SPECIALIZED PRACTICE</div>
         <div class="compare-revenue">$500K–$3M+</div>
         <div class="compare-annual">annual revenue</div>
@@ -538,24 +551,27 @@
     </div>
   </section>
 
-  <!-- 5. Family Office Light -->
+  <!-- 5. Fractional Family Office -->
   <section class="section practice-model">
     <span class="section-label">THE PRACTICE MODEL</span>
-    <h2 class="section-heading">Family Office Light</h2>
+    <h2 class="section-heading">Fractional Family Office</h2>
     <p class="section-italic">Most business owners don't have a planning problem.<br>They have a coordination problem.</p>
     <div class="card-row" style="gap: 32px; max-width: 1200px;">
       <div class="philosophy-card">
         <div class="gold-bar"></div>
+        <i data-lucide="puzzle" class="icon-gold"></i>
         <div class="card-label">The Problem</div>
         <p class="card-body">Someone manages the investments. Someone prepares the taxes. Someone wrote the estate documents. Rarely does anyone hold the whole picture together.</p>
       </div>
       <div class="philosophy-card">
         <div class="gold-bar"></div>
+        <i data-lucide="layers" class="icon-gold"></i>
         <div class="card-label">The Model</div>
         <p class="card-body">The wealthiest families have always had a private team coordinating everything under one roof. The Seven Pillars deliver that same coordination — earlier in the wealth journey.</p>
       </div>
       <div class="philosophy-card">
         <div class="gold-bar"></div>
+        <i data-lucide="target" class="icon-gold"></i>
         <div class="card-label">The Role</div>
         <p class="card-body">You sit in the middle — CPA, attorney, banker, and team — so every part of your client's financial world is moving in the same direction. You are the quarterback.</p>
       </div>
@@ -576,18 +592,21 @@
     <div class="pillar-row">
       <div class="pillar-card">
         <div class="gold-bar"></div>
+        <i data-lucide="compass" class="icon-gold"></i>
         <div class="pillar-num">01</div>
         <div class="pillar-title">Values &amp; Vision</div>
         <p class="pillar-desc">The foundation everything else is built on.</p>
       </div>
       <div class="pillar-card">
         <div class="gold-bar"></div>
+        <i data-lucide="wallet" class="icon-gold"></i>
         <div class="pillar-num">02</div>
         <div class="pillar-title">Cash Flow &amp; Balance Sheet</div>
         <p class="pillar-desc">Guardrails across Growth, Liquidity, and Control.</p>
       </div>
       <div class="pillar-card">
         <div class="gold-bar"></div>
+        <i data-lucide="shield" class="icon-gold"></i>
         <div class="pillar-num">03</div>
         <div class="pillar-title">Risk &amp; Investment Audit</div>
         <p class="pillar-desc">Protection, Buy-Sell, key person, portfolio alignment.</p>
@@ -596,24 +615,28 @@
     <div class="pillar-row">
       <div class="pillar-card">
         <div class="gold-bar"></div>
+        <i data-lucide="calculator" class="icon-gold"></i>
         <div class="pillar-num">04</div>
         <div class="pillar-title">Lifetime Tax Strategy</div>
         <p class="pillar-desc">Tax bucket optimization over a lifetime.</p>
       </div>
       <div class="pillar-card">
         <div class="gold-bar"></div>
+        <i data-lucide="trending-up" class="icon-gold"></i>
         <div class="pillar-num">05</div>
         <div class="pillar-title">Business Valuation</div>
         <p class="pillar-desc">Enterprise value, value drivers, the exit gap.</p>
       </div>
       <div class="pillar-card">
         <div class="gold-bar"></div>
+        <i data-lucide="door-open" class="icon-gold"></i>
         <div class="pillar-num">06</div>
         <div class="pillar-title">Exit &amp; Transition</div>
         <p class="pillar-desc">Readiness, succession, the multi-year roadmap.</p>
       </div>
       <div class="pillar-card">
         <div class="gold-bar"></div>
+        <i data-lucide="heart-handshake" class="icon-gold"></i>
         <div class="pillar-num">07</div>
         <div class="pillar-title">Legacy &amp; Estate</div>
         <p class="pillar-desc">Wealth transfer, multigenerational planning.</p>
@@ -628,16 +651,19 @@
     <h2 class="section-heading" style="font-size: 36px; max-width: 900px;">One Client. Multiple Revenue Events. Multiple Decades.</h2>
     <div class="card-row" style="max-width: 1200px;">
       <div class="stream-card">
+        <i data-lucide="file-text" class="icon-gold"></i>
         <div class="stream-title">Planning Fees</div>
         <div class="stream-highlight">$9K–$24K per engagement</div>
         <p class="stream-desc">Comprehensive, values-based planning that justifies premium fees through depth and sophistication no generalist can match.</p>
       </div>
       <div class="stream-card">
+        <i data-lucide="shield" class="icon-gold"></i>
         <div class="stream-title">Insurance Premium</div>
         <div class="stream-highlight">5–20x personal-only scale</div>
         <p class="stream-desc">Buy-Sell funding, key person coverage, executive carve-out — business protection needs that dwarf personal coverage alone.</p>
       </div>
       <div class="stream-card">
+        <i data-lucide="trending-up" class="icon-gold"></i>
         <div class="stream-title">Assets Under Management</div>
         <div class="stream-highlight">The exit event is the inflection</div>
         <p class="stream-desc">The largest single AUM event of the client's life — then multigenerational wealth retention across decades.</p>
@@ -695,15 +721,15 @@
     <h2 class="section-heading">Seven Planning Systems. One Workspace.</h2>
     <p class="section-body" style="color: var(--text-body);">Contnuum replaces the disconnected tools advisors rely on with a unified, AI-powered platform — purpose-built for the business owner planning lifecycle.</p>
     <div class="platform-row">
-      <div class="platform-card"><span class="plat-num">01</span><div class="plat-title">Financial Analysis</div><p class="plat-desc">P&amp;L, balance sheet, working capital, and KPI benchmarks against industry data.</p></div>
-      <div class="platform-card"><span class="plat-num">02</span><div class="plat-title">Business Valuation</div><p class="plat-desc">EBITDA, SDE, revenue, and DCF methods with private company adjustments.</p></div>
-      <div class="platform-card"><span class="plat-num">03</span><div class="plat-title">Tax Strategy</div><p class="plat-desc">Entity optimization, exit planning, and lifetime tax minimization across structures.</p></div>
-      <div class="platform-card"><span class="plat-num">04</span><div class="plat-title">Risk &amp; Investment Audit</div><p class="plat-desc">Concentration, key person, continuity, and guardrail monitoring in real time.</p></div>
+      <div class="platform-card"><i data-lucide="activity" class="icon-gold"></i><span class="plat-num">01</span><div class="plat-title">Financial Analysis</div><p class="plat-desc">P&amp;L, balance sheet, working capital, and KPI benchmarks against industry data.</p></div>
+      <div class="platform-card"><i data-lucide="trending-up" class="icon-gold"></i><span class="plat-num">02</span><div class="plat-title">Business Valuation</div><p class="plat-desc">EBITDA, SDE, revenue, and DCF methods with private company adjustments.</p></div>
+      <div class="platform-card"><i data-lucide="calculator" class="icon-gold"></i><span class="plat-num">03</span><div class="plat-title">Tax Strategy</div><p class="plat-desc">Entity optimization, exit planning, and lifetime tax minimization across structures.</p></div>
+      <div class="platform-card"><i data-lucide="shield-alert" class="icon-gold"></i><span class="plat-num">04</span><div class="plat-title">Risk &amp; Investment Audit</div><p class="plat-desc">Concentration, key person, continuity, and guardrail monitoring in real time.</p></div>
     </div>
     <div class="platform-row">
-      <div class="platform-card"><span class="plat-num">05</span><div class="plat-title">Personal Wealth</div><p class="plat-desc">Net worth aggregation, retirement readiness, and exit proceeds planning.</p></div>
-      <div class="platform-card"><span class="plat-num">06</span><div class="plat-title">Scenario Modeling</div><p class="plat-desc">What-if analysis, Monte Carlo forecasting, and liquidity runway projections.</p></div>
-      <div class="platform-card"><span class="plat-num">07</span><div class="plat-title">Exit &amp; Transition</div><p class="plat-desc">Sale analysis, succession strategy, data room preparation, and readiness scoring.</p></div>
+      <div class="platform-card"><i data-lucide="wallet" class="icon-gold"></i><span class="plat-num">05</span><div class="plat-title">Personal Wealth</div><p class="plat-desc">Net worth aggregation, retirement readiness, and exit proceeds planning.</p></div>
+      <div class="platform-card"><i data-lucide="git-branch" class="icon-gold"></i><span class="plat-num">06</span><div class="plat-title">Scenario Modeling</div><p class="plat-desc">What-if analysis, Monte Carlo forecasting, and liquidity runway projections.</p></div>
+      <div class="platform-card"><i data-lucide="door-open" class="icon-gold"></i><span class="plat-num">07</span><div class="plat-title">Exit &amp; Transition</div><p class="plat-desc">Sale analysis, succession strategy, data room preparation, and readiness scoring.</p></div>
     </div>
     <div class="ai-bar">
       <svg class="ai-bar-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
@@ -763,5 +789,6 @@
     <p class="footer-disclaimer">This material is for informational purposes only and does not constitute financial, tax, or legal advice. All revenue figures are illustrative, based on industry data, and are not guarantees of future performance. Individual results vary based on effort, market conditions, and client circumstances.</p>
   </section>
 
+  <script>lucide.createIcons();</script>
 </body>
 </html>
