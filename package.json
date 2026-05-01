@@ -1,0 +1,11 @@
+{
+  "name": "ewp-practice-impact",
+  "version": "1.0.0",
+  "description": "EWP Practice Impact — The Practice Opportunity of a Generation",
+  "scripts": {
+    "start": "serve . -l $PORT -s"
+  },
+  "dependencies": {
+    "serve": "^14.0.0"
+  }
+}
