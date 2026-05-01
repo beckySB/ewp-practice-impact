@@ -68,13 +68,19 @@
     .card-row > * { flex: 1; }
     .gold-bar { width: 100%; height: 3px; background: var(--gold); }
 
+    /* ─── Icons ─── */
+    .icon-gold { color: var(--gold); }
+    .icon-24 { width: 24px; height: 24px; }
+    .icon-28 { width: 28px; height: 28px; }
+    .icon-32 { width: 32px; height: 32px; }
+
     /* ─── Hero ─── */
     .hero {
       min-height: 100vh;
       background: linear-gradient(to bottom, var(--navy) 0%, var(--navy-light) 50%, var(--navy) 70%, var(--border) 92%, var(--cream) 100%);
       justify-content: center;
       gap: 40px;
-      padding: 60px 120px;
+      padding: 0 120px;
     }
     .hero-badge {
       border: 1.5px solid var(--gold);
@@ -142,14 +148,14 @@
     /* ─── Quote ─── */
     .quote-section {
       background: var(--navy);
-      padding: 80px 160px;
+      padding: 100px 160px;
       gap: 32px;
       justify-content: center;
     }
     .quote-deco { font-family: var(--font-heading); font-size: 72px; color: var(--gold-60); text-align: center; line-height: 1; }
     .quote-text {
       font-family: var(--font-heading);
-      font-size: 34px;
+      font-size: 38px;
       font-style: italic;
       color: var(--cream);
       line-height: 1.6;
@@ -356,6 +362,25 @@
       color: var(--gold);
       text-align: center;
     }
+    .engine-grid { display: flex; gap: 14px; width: 100%; max-width: 1200px; }
+    .engine-grid > * { flex: 1; }
+    .engine-card {
+      border: 1px solid var(--border);
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .engine-card .eng-title { font-size: 20px; font-weight: 600; color: var(--text-dark); text-align: center; }
+    .engine-card .eng-desc { font-size: 15px; color: var(--text-body); line-height: 1.6; text-align: center; }
+    .engine-closing {
+      font-size: 20px;
+      color: var(--text-body);
+      line-height: 1.7;
+      text-align: center;
+      max-width: 850px;
+    }
 
     /* ─── Platform ─── */
     .platform {
@@ -364,7 +389,7 @@
       gap: 48px;
     }
     .platform h2 { font-size: 44px; max-width: 900px; }
-    .platform .section-body { color: var(--text-body); }
+    .platform .section-body { color: var(--text-body); max-width: 850px; }
     .platform-row { display: flex; gap: 16px; width: 100%; max-width: 1200px; }
     .platform-row > * { flex: 1; }
     .platform-card {
@@ -388,7 +413,7 @@
       width: 100%;
       max-width: 1200px;
     }
-    .ai-bar-icon { color: var(--gold); flex-shrink: 0; }
+    .ai-bar-icon { color: var(--gold); flex-shrink: 0; width: 32px; height: 32px; }
     .ai-bar-title { font-size: 20px; font-weight: 700; color: var(--cream); }
     .ai-bar-desc { font-size: 16px; color: var(--text-light); line-height: 1.5; }
 
@@ -399,7 +424,7 @@
       gap: 48px;
     }
     .security h2 { font-size: 44px; color: var(--cream); max-width: 900px; }
-    .security .section-body { color: var(--text-light); }
+    .security .section-body { color: var(--text-light); max-width: 850px; }
     .security-row { display: flex; gap: 24px; width: 100%; max-width: 1200px; }
     .security-row > * { flex: 1; }
     .security-card {
@@ -410,7 +435,7 @@
       flex-direction: column;
       gap: 14px;
     }
-    .security-card .sec-icon { color: var(--gold); }
+    .security-card .sec-icon { color: var(--gold); width: 28px; height: 28px; }
     .security-card .sec-title { font-size: 20px; font-weight: 700; color: var(--cream); }
     .security-card .sec-desc { font-size: 16px; color: var(--text-light); line-height: 1.6; }
     .security-divider { width: 80px; height: 1px; background: var(--gold-40); }
@@ -427,7 +452,7 @@
       background: var(--navy);
       padding: 80px 120px;
       gap: 32px;
-      justify-content: center;
+      justify-content: space-between;
       min-height: 500px;
     }
     .closing-deco { font-size: 18px; color: var(--gold-50); text-align: center; }
@@ -455,22 +480,12 @@
     .footer .footer-contact { font-size: 18px; color: rgba(255,255,255,0.69); line-height: 1.8; text-align: center; max-width: 500px; }
     .footer .footer-disclaimer { font-size: 12px; color: rgba(255,255,255,0.38); line-height: 1.8; text-align: center; max-width: 700px; }
 
-    /* ─── Icons ─── */
-    .icon-gold { color: var(--gold); width: 28px; height: 28px; }
-    .icon-gold-lg { color: var(--gold); width: 32px; height: 32px; }
-    .icon-cream { color: var(--cream); width: 28px; height: 28px; }
-    .compare-card .icon-gold { margin-bottom: 8px; }
-    .philosophy-card .icon-gold { margin-bottom: 4px; }
-    .pillar-card .icon-gold { margin-bottom: 4px; }
-    .stream-card .icon-gold { margin-bottom: 4px; }
-    .platform-card .icon-gold { margin-bottom: 4px; }
-
     /* ─── Responsive ─── */
     @media (max-width: 1024px) {
       .hero { padding: 60px 40px; }
       .hero h1 { font-size: 48px; }
       .section { padding-left: 40px !important; padding-right: 40px !important; }
-      .card-row, .compare-row, .pillar-row, .platform-row, .security-row { flex-direction: column; }
+      .card-row, .compare-row, .pillar-row, .platform-row, .security-row, .engine-grid { flex-direction: column; }
       .stat-number { font-size: 48px; }
       .quote-section { padding: 60px 40px; }
       .quote-text { font-size: 24px; }
@@ -533,7 +548,7 @@
     <h2 class="section-heading">Same Advisor. Different Practice. Different Outcome.</h2>
     <div class="compare-row">
       <div class="compare-card generalist">
-        <i data-lucide="trending-down" class="icon-gold"></i>
+        <i data-lucide="trending-down" class="icon-gold icon-32"></i>
         <div class="compare-sublabel">GENERALIST PRACTICE</div>
         <div class="compare-revenue">$150K–$280K</div>
         <div class="compare-annual">annual revenue</div>
@@ -541,7 +556,7 @@
         <p class="compare-details">100–150 clients &nbsp;•&nbsp; $3K–$6K per household<br>Linear growth &nbsp;•&nbsp; Transactional revenue</p>
       </div>
       <div class="compare-card specialized">
-        <i data-lucide="trending-up" class="icon-gold"></i>
+        <i data-lucide="trending-up" class="icon-gold icon-32"></i>
         <div class="compare-sublabel">SPECIALIZED PRACTICE</div>
         <div class="compare-revenue">$500K–$3M+</div>
         <div class="compare-annual">annual revenue</div>
@@ -559,19 +574,19 @@
     <div class="card-row" style="gap: 32px; max-width: 1200px;">
       <div class="philosophy-card">
         <div class="gold-bar"></div>
-        <i data-lucide="puzzle" class="icon-gold"></i>
+        <i data-lucide="puzzle" class="icon-gold icon-28"></i>
         <div class="card-label">The Problem</div>
         <p class="card-body">Someone manages the investments. Someone prepares the taxes. Someone wrote the estate documents. Rarely does anyone hold the whole picture together.</p>
       </div>
       <div class="philosophy-card">
         <div class="gold-bar"></div>
-        <i data-lucide="layers" class="icon-gold"></i>
+        <i data-lucide="layers" class="icon-gold icon-28"></i>
         <div class="card-label">The Model</div>
         <p class="card-body">The wealthiest families have always had a private team coordinating everything under one roof. The Seven Pillars deliver that same coordination — earlier in the wealth journey.</p>
       </div>
       <div class="philosophy-card">
         <div class="gold-bar"></div>
-        <i data-lucide="target" class="icon-gold"></i>
+        <i data-lucide="target" class="icon-gold icon-28"></i>
         <div class="card-label">The Role</div>
         <p class="card-body">You sit in the middle — CPA, attorney, banker, and team — so every part of your client's financial world is moving in the same direction. You are the quarterback.</p>
       </div>
@@ -592,21 +607,21 @@
     <div class="pillar-row">
       <div class="pillar-card">
         <div class="gold-bar"></div>
-        <i data-lucide="compass" class="icon-gold"></i>
+        <i data-lucide="compass" class="icon-gold icon-32"></i>
         <div class="pillar-num">01</div>
         <div class="pillar-title">Values &amp; Vision</div>
         <p class="pillar-desc">The foundation everything else is built on.</p>
       </div>
       <div class="pillar-card">
         <div class="gold-bar"></div>
-        <i data-lucide="wallet" class="icon-gold"></i>
+        <i data-lucide="wallet" class="icon-gold icon-32"></i>
         <div class="pillar-num">02</div>
         <div class="pillar-title">Cash Flow &amp; Balance Sheet</div>
         <p class="pillar-desc">Guardrails across Growth, Liquidity, and Control.</p>
       </div>
       <div class="pillar-card">
         <div class="gold-bar"></div>
-        <i data-lucide="shield" class="icon-gold"></i>
+        <i data-lucide="shield" class="icon-gold icon-32"></i>
         <div class="pillar-num">03</div>
         <div class="pillar-title">Risk &amp; Investment Audit</div>
         <p class="pillar-desc">Protection, Buy-Sell, key person, portfolio alignment.</p>
@@ -615,28 +630,28 @@
     <div class="pillar-row">
       <div class="pillar-card">
         <div class="gold-bar"></div>
-        <i data-lucide="calculator" class="icon-gold"></i>
+        <i data-lucide="calculator" class="icon-gold icon-32"></i>
         <div class="pillar-num">04</div>
         <div class="pillar-title">Lifetime Tax Strategy</div>
         <p class="pillar-desc">Tax bucket optimization over a lifetime.</p>
       </div>
       <div class="pillar-card">
         <div class="gold-bar"></div>
-        <i data-lucide="trending-up" class="icon-gold"></i>
+        <i data-lucide="trending-up" class="icon-gold icon-32"></i>
         <div class="pillar-num">05</div>
         <div class="pillar-title">Business Valuation</div>
         <p class="pillar-desc">Enterprise value, value drivers, the exit gap.</p>
       </div>
       <div class="pillar-card">
         <div class="gold-bar"></div>
-        <i data-lucide="door-open" class="icon-gold"></i>
+        <i data-lucide="door-open" class="icon-gold icon-32"></i>
         <div class="pillar-num">06</div>
         <div class="pillar-title">Exit &amp; Transition</div>
         <p class="pillar-desc">Readiness, succession, the multi-year roadmap.</p>
       </div>
       <div class="pillar-card">
         <div class="gold-bar"></div>
-        <i data-lucide="heart-handshake" class="icon-gold"></i>
+        <i data-lucide="heart-handshake" class="icon-gold icon-32"></i>
         <div class="pillar-num">07</div>
         <div class="pillar-title">Legacy &amp; Estate</div>
         <p class="pillar-desc">Wealth transfer, multigenerational planning.</p>
@@ -651,19 +666,19 @@
     <h2 class="section-heading" style="font-size: 36px; max-width: 900px;">One Client. Multiple Revenue Events. Multiple Decades.</h2>
     <div class="card-row" style="max-width: 1200px;">
       <div class="stream-card">
-        <i data-lucide="file-text" class="icon-gold"></i>
+        <i data-lucide="file-text" class="icon-gold icon-32"></i>
         <div class="stream-title">Planning Fees</div>
         <div class="stream-highlight">$9K–$24K per engagement</div>
         <p class="stream-desc">Comprehensive, values-based planning that justifies premium fees through depth and sophistication no generalist can match.</p>
       </div>
       <div class="stream-card">
-        <i data-lucide="shield" class="icon-gold"></i>
+        <i data-lucide="shield" class="icon-gold icon-32"></i>
         <div class="stream-title">Insurance Premium</div>
         <div class="stream-highlight">5–20x personal-only scale</div>
         <p class="stream-desc">Buy-Sell funding, key person coverage, executive carve-out — business protection needs that dwarf personal coverage alone.</p>
       </div>
       <div class="stream-card">
-        <i data-lucide="trending-up" class="icon-gold"></i>
+        <i data-lucide="trending-up" class="icon-gold icon-32"></i>
         <div class="stream-title">Assets Under Management</div>
         <div class="stream-highlight">The exit event is the inflection</div>
         <p class="stream-desc">The largest single AUM event of the client's life — then multigenerational wealth retention across decades.</p>
@@ -713,26 +728,53 @@
     <p class="section-body" style="color: var(--text-body); max-width: 800px;">The Seven Pillars define the work. Contnuum is the platform that makes it repeatable, scalable, and defensible — every client, every time.</p>
     <div class="engine-logo"><span>contnuum</span></div>
     <p class="engine-tagline">AI That Protects Trust, Not Just Portfolios.</p>
+    <div class="engine-grid">
+      <div class="engine-card">
+        <div class="gold-bar"></div>
+        <i data-lucide="layout-dashboard" class="icon-gold icon-32"></i>
+        <div class="eng-title">Unified Platform</div>
+        <p class="eng-desc">All 7 planning systems in one SOC2-compliant workspace.</p>
+      </div>
+      <div class="engine-card">
+        <div class="gold-bar"></div>
+        <i data-lucide="brain" class="icon-gold icon-32"></i>
+        <div class="eng-title">Agentic AI</div>
+        <p class="eng-desc">Audit-ready AI — explainable and defensible by design.</p>
+      </div>
+      <div class="engine-card">
+        <div class="gold-bar"></div>
+        <i data-lucide="repeat" class="icon-gold icon-32"></i>
+        <div class="eng-title">Repeatable Process</div>
+        <p class="eng-desc">Same methodology, same quality, every client — at scale.</p>
+      </div>
+      <div class="engine-card">
+        <div class="gold-bar"></div>
+        <i data-lucide="shield-check" class="icon-gold icon-32"></i>
+        <div class="eng-title">Security-First</div>
+        <p class="eng-desc">Built for trust — compliance defensible by design.</p>
+      </div>
+    </div>
+    <p class="engine-closing">The practices that will capture this work are the practices designed to deliver it: with documented methodology, repeatable client journeys, and the operational discipline that turns one well-served relationship into the next ten.</p>
   </section>
 
   <!-- 10. The Platform -->
   <section class="section platform">
     <span class="section-label">THE PLATFORM</span>
     <h2 class="section-heading">Seven Planning Systems. One Workspace.</h2>
-    <p class="section-body" style="color: var(--text-body);">Contnuum replaces the disconnected tools advisors rely on with a unified, AI-powered platform — purpose-built for the business owner planning lifecycle.</p>
+    <p class="section-body" style="color: var(--text-body); max-width: 850px;">Contnuum replaces the disconnected tools advisors rely on with a unified, AI-powered platform — purpose-built for the business owner planning lifecycle.</p>
     <div class="platform-row">
-      <div class="platform-card"><i data-lucide="activity" class="icon-gold"></i><span class="plat-num">01</span><div class="plat-title">Financial Analysis</div><p class="plat-desc">P&amp;L, balance sheet, working capital, and KPI benchmarks against industry data.</p></div>
-      <div class="platform-card"><i data-lucide="trending-up" class="icon-gold"></i><span class="plat-num">02</span><div class="plat-title">Business Valuation</div><p class="plat-desc">EBITDA, SDE, revenue, and DCF methods with private company adjustments.</p></div>
-      <div class="platform-card"><i data-lucide="calculator" class="icon-gold"></i><span class="plat-num">03</span><div class="plat-title">Tax Strategy</div><p class="plat-desc">Entity optimization, exit planning, and lifetime tax minimization across structures.</p></div>
-      <div class="platform-card"><i data-lucide="shield-alert" class="icon-gold"></i><span class="plat-num">04</span><div class="plat-title">Risk &amp; Investment Audit</div><p class="plat-desc">Concentration, key person, continuity, and guardrail monitoring in real time.</p></div>
+      <div class="platform-card"><i data-lucide="activity" class="icon-gold icon-24"></i><span class="plat-num">01</span><div class="plat-title">Financial Analysis</div><p class="plat-desc">P&amp;L, balance sheet, working capital, and KPI benchmarks against industry data.</p></div>
+      <div class="platform-card"><i data-lucide="trending-up" class="icon-gold icon-24"></i><span class="plat-num">02</span><div class="plat-title">Business Valuation</div><p class="plat-desc">EBITDA, SDE, revenue, and DCF methods with private company adjustments.</p></div>
+      <div class="platform-card"><i data-lucide="calculator" class="icon-gold icon-24"></i><span class="plat-num">03</span><div class="plat-title">Tax Strategy</div><p class="plat-desc">Entity optimization, exit planning, and lifetime tax minimization across structures.</p></div>
+      <div class="platform-card"><i data-lucide="shield-alert" class="icon-gold icon-24"></i><span class="plat-num">04</span><div class="plat-title">Risk &amp; Investment Audit</div><p class="plat-desc">Concentration, key person, continuity, and guardrail monitoring in real time.</p></div>
     </div>
     <div class="platform-row">
-      <div class="platform-card"><i data-lucide="wallet" class="icon-gold"></i><span class="plat-num">05</span><div class="plat-title">Personal Wealth</div><p class="plat-desc">Net worth aggregation, retirement readiness, and exit proceeds planning.</p></div>
-      <div class="platform-card"><i data-lucide="git-branch" class="icon-gold"></i><span class="plat-num">06</span><div class="plat-title">Scenario Modeling</div><p class="plat-desc">What-if analysis, Monte Carlo forecasting, and liquidity runway projections.</p></div>
-      <div class="platform-card"><i data-lucide="door-open" class="icon-gold"></i><span class="plat-num">07</span><div class="plat-title">Exit &amp; Transition</div><p class="plat-desc">Sale analysis, succession strategy, data room preparation, and readiness scoring.</p></div>
+      <div class="platform-card"><i data-lucide="wallet" class="icon-gold icon-24"></i><span class="plat-num">05</span><div class="plat-title">Personal Wealth</div><p class="plat-desc">Net worth aggregation, retirement readiness, and exit proceeds planning.</p></div>
+      <div class="platform-card"><i data-lucide="git-branch" class="icon-gold icon-24"></i><span class="plat-num">06</span><div class="plat-title">Scenario Modeling</div><p class="plat-desc">What-if analysis, Monte Carlo forecasting, and liquidity runway projections.</p></div>
+      <div class="platform-card"><i data-lucide="door-open" class="icon-gold icon-24"></i><span class="plat-num">07</span><div class="plat-title">Exit &amp; Transition</div><p class="plat-desc">Sale analysis, succession strategy, data room preparation, and readiness scoring.</p></div>
     </div>
     <div class="ai-bar">
-      <svg class="ai-bar-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>
+      <i data-lucide="brain" class="ai-bar-icon"></i>
       <div>
         <div class="ai-bar-title">AI Advisory Intelligence</div>
         <p class="ai-bar-desc">20 expert agents across 7 pillars — SME-trained, audit-ready, and explainable. Every recommendation traces to source data, methodology, and assumptions.</p>
@@ -747,22 +789,22 @@
     <p class="section-body" style="color: var(--text-light);">When your clients trust you with everything — their business, their family, their legacy — the platform that supports you must be built to that standard.</p>
     <div class="security-row">
       <div class="security-card">
-        <svg class="sec-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        <i data-lucide="shield-check" class="sec-icon"></i>
         <div class="sec-title">SOC2 Compliant</div>
         <p class="sec-desc">Enterprise-grade security controls. Encryption at rest and in transit. Continuous monitoring with documented evidence of compliance.</p>
       </div>
       <div class="security-card">
-        <svg class="sec-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg>
+        <i data-lucide="file-check" class="sec-icon"></i>
         <div class="sec-title">FINRA/SEC Audit Trail</div>
         <p class="sec-desc">Every recommendation logged, timestamped, and attributable. Full regulatory defensibility from intake through delivery.</p>
       </div>
       <div class="security-card">
-        <svg class="sec-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        <i data-lucide="eye" class="sec-icon"></i>
         <div class="sec-title">Explainable AI</div>
         <p class="sec-desc">No black-box decisions. Every insight traces to source data, methodology, and assumptions. Advisors see the reasoning, not just the output.</p>
       </div>
       <div class="security-card">
-        <svg class="sec-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <i data-lucide="lock" class="sec-icon"></i>
         <div class="sec-title">Data Sovereignty</div>
         <p class="sec-desc">Single-tenant architecture. Client data never crosses firm boundaries. Your clients' information stays yours — period.</p>
       </div>
