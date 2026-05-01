@@ -77,10 +77,18 @@
     /* ─── Hero ─── */
     .hero {
       min-height: 100vh;
-      background: linear-gradient(to bottom, var(--navy) 0%, var(--navy-light) 50%, var(--navy) 70%, var(--border) 92%, var(--cream) 100%);
+      background:
+        linear-gradient(to bottom,
+          #1B2E4AE0 0%,
+          #1B2E4ACC 50%,
+          #1B2E4ABB 70%,
+          #243B5A90 88%,
+          #FAF8F5 100%),
+        url('images/hero-bg.png') center / cover no-repeat;
       justify-content: center;
       gap: 40px;
       padding: 0 120px;
+      position: relative;
     }
     .hero-badge {
       border: 1.5px solid var(--gold);
@@ -449,7 +457,7 @@
 
     /* ─── Closing Quote ─── */
     .closing {
-      background: var(--navy);
+      background: url('images/closing-bg.png') center / cover no-repeat;
       padding: 80px 120px;
       gap: 32px;
       justify-content: space-between;
