@@ -842,6 +842,84 @@
       margin-bottom: 0;
     }
 
+    /* ============================================
+       REVENUE AND RETENTION
+       ============================================ */
+    .revenue-comparison {
+      margin: 50px 0 60px;
+      border: 1px solid var(--border);
+      background: var(--white);
+    }
+    .revenue-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1.2fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .revenue-row:last-child {
+      border-bottom: none;
+    }
+    .revenue-row-header {
+      background: var(--cream-warm);
+      font-weight: 700;
+    }
+    .revenue-cell-label {
+      padding: 18px 24px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      background: var(--cream-light);
+      border-right: 1px solid var(--border);
+    }
+    .revenue-cell {
+      padding: 18px 24px;
+      font-family: 'Nunito', sans-serif;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-body-alt);
+      border-right: 1px solid var(--border);
+    }
+    .revenue-cell:last-child {
+      border-right: none;
+    }
+    .revenue-cell-bo {
+      background: rgba(201, 169, 98, 0.05);
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+    .revenue-row-header .revenue-cell {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .revenue-section-h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-style: italic;
+      color: var(--navy);
+      margin: 30px 0 20px;
+    }
+    .revenue-pullquote {
+      text-align: center;
+      margin: 60px auto 0;
+      max-width: 880px;
+    }
+    .revenue-pullquote-ornament {
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      letter-spacing: 8px;
+      margin: 16px 0;
+    }
+    .revenue-pullquote-text {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 26px;
+      line-height: 1.4;
+      color: var(--navy);
+    }
+
     /*─── Responsive ─── */
     @media (max-width: 1024px) {
       .hero { padding: 60px 40px; }
@@ -868,6 +946,12 @@
       .market-reality-pullquote-text { font-size: 22px; }
       .spine-callout-heading { font-size: 19px; }
       .pillars-thesis { font-size: 26px; }
+      .revenue-row { grid-template-columns: 1fr; }
+      .revenue-cell-label { border-right: none; border-bottom: 1px solid var(--border); }
+      .revenue-cell { border-right: none; border-bottom: 1px solid var(--border); }
+      .revenue-row-header { display: none; }
+      .revenue-pullquote-text { font-size: 22px; }
+      .revenue-section-h3 { font-size: 22px; }
     }
     @media (max-width: 640px) {
       .hero { padding: 40px 20px; }
@@ -1268,6 +1352,68 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- REVENUE AND RETENTION -->
+  <section class="section section-cream">
+    <div class="container">
+      <span class="section-label">Answering Question 01 &middot; Why this compounds</span>
+      <h2 class="section-heading">Why business owner relationships compound where personal planning relationships do not.</h2>
+
+      <p class="section-lead">
+        Northwestern Mutual gets paid through two primary engines: core insurance and AUM. A business owner relationship served well across the Seven Pillars surfaces categorically more of both, over a longer arc, with more touchpoints, and across more generations. The same advisor effort produces a different practice.
+      </p>
+
+      <div class="revenue-comparison">
+        <div class="revenue-row revenue-row-header">
+          <div class="revenue-cell-label"></div>
+          <div class="revenue-cell">Personal Planning Relationship</div>
+          <div class="revenue-cell revenue-cell-bo">Business Owner Relationship</div>
+        </div>
+        <div class="revenue-row">
+          <div class="revenue-cell-label">First-year insurance premium</div>
+          <div class="revenue-cell">$2K to $5K (term, modest whole life, DI)</div>
+          <div class="revenue-cell revenue-cell-bo">$30K to $150K+ (Buy-Sell funding, key person, executive carve-out, personal layer)</div>
+        </div>
+        <div class="revenue-row">
+          <div class="revenue-cell-label">Insurance sale events over 20 years</div>
+          <div class="revenue-cell">1 to 2 (initial coverage, refresh at major life event)</div>
+          <div class="revenue-cell revenue-cell-bo">4 to 7 (Buy-Sell, key person, executive comp, exit refresh, post-exit refresh, generational additions)</div>
+        </div>
+        <div class="revenue-row">
+          <div class="revenue-cell-label">Pre-event AUM accumulation</div>
+          <div class="revenue-cell">$500K to $2M typical at retirement</div>
+          <div class="revenue-cell revenue-cell-bo">$1M to $10M+ pre-exit</div>
+        </div>
+        <div class="revenue-row">
+          <div class="revenue-cell-label">The liquidity event</div>
+          <div class="revenue-cell">None (retirement is gradual drawdown)</div>
+          <div class="revenue-cell revenue-cell-bo">The single largest event of the client's financial life: $5M to $50M+ deposited</div>
+        </div>
+        <div class="revenue-row">
+          <div class="revenue-cell-label">Post-event AUM</div>
+          <div class="revenue-cell">Decumulating</div>
+          <div class="revenue-cell revenue-cell-bo">Compounding into the next generation</div>
+        </div>
+        <div class="revenue-row">
+          <div class="revenue-cell-label">Multi-generational continuation</div>
+          <div class="revenue-cell">Sometimes</div>
+          <div class="revenue-cell revenue-cell-bo">Almost always</div>
+        </div>
+      </div>
+
+      <h3 class="revenue-section-h3">Retention runs in both directions.</h3>
+
+      <p class="section-lead">
+        A relationship with multiple insurance policies in force, a documented multi-year exit roadmap, a CPA, attorney, and banker network the advisor coordinates, and a complete planning history in Contnuum is structurally hard for the client to leave. That same depth of engagement keeps the advisor at the firm, because moving the practice means rebuilding all of that infrastructure on a new platform.
+      </p>
+
+      <div class="revenue-pullquote">
+        <div class="revenue-pullquote-ornament">&mdash; &#10022; &mdash;</div>
+        <p class="revenue-pullquote-text">Multiplied across the field force, the segment economics are an order of magnitude larger than any single practice.</p>
+        <div class="revenue-pullquote-ornament">&mdash; &#10022; &mdash;</div>
+      </div>
     </div>
   </section>
 
