@@ -783,6 +783,31 @@
       color: var(--navy);
     }
 
+    /* ============================================
+       SPINE PAGE SECONDARY CALLOUTS
+       ============================================ */
+    .spine-callout-secondary {
+      margin-top: 28px;
+    }
+    .spine-callout-heading {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--navy);
+      margin-bottom: 18px;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+    .spine-callout-body {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+    .spine-callout-body:last-child {
+      margin-bottom: 0;
+    }
+
     /*─── Responsive ─── */
     @media (max-width: 1024px) {
       .hero { padding: 60px 40px; }
@@ -807,6 +832,7 @@
       .footer { padding: 60px 40px; }
       .market-reality-grid { grid-template-columns: 1fr; }
       .market-reality-pullquote-text { font-size: 22px; }
+      .spine-callout-heading { font-size: 19px; }
     }
     @media (max-width: 640px) {
       .hero { padding: 40px 20px; }
@@ -996,6 +1022,21 @@
         <p class="spine-job"><strong>It deepens the client relationship.</strong> Every interaction is documented. Every plan is current. Every pillar conversation is sequenced. The client experiences coordinated planning, not seven separate conversations.</p>
         <p class="spine-job"><strong>It drives plan implementation at every level.</strong> Recommendations are pre-populated with NM-approved language. Handoffs to Concierge Planning, Private Client Services, and Fee-Based Planning happen at the moments they belong. The advisor approves and presents. Implementation happens on rails.</p>
         <p class="spine-job"><strong>It makes the team's job easier.</strong> Notes from client calls flow into the planning workflow without re-keying. Visualizations populate from approved templates. The senior advisor stops being the bottleneck. Associate financial reps and case managers can run more of the work independently.</p>
+      </div>
+
+      <!-- COMPLIANCE POSTURE CALLOUT -->
+      <div class="spine-callout spine-callout-secondary">
+        <div class="spine-callout-label">Built for the firm's compliance posture</div>
+        <p class="spine-callout-body">Designed from day one for Northwestern Mutual's compliance and security requirements. SOC2 architecture, FINRA and SEC audit-ready by design, single-tenant data sovereignty, explainable AI, complete audit trail. The constraints that make a firm-scale workspace deployable are part of the build, not added on top of it.</p>
+      </div>
+
+      <!-- FORMULA AND PLAN INTEGRITY CALLOUT -->
+      <div class="spine-callout spine-callout-secondary">
+        <div class="spine-callout-label">Why one workspace matters</div>
+        <h3 class="spine-callout-heading">One methodology. One workspace. The math reconciles across pillars.</h3>
+        <p class="spine-callout-body">A sophisticated business owner plan only holds up if the analytical work across the seven pillars uses the same methodology, the same formulas, and the same underlying data. When pieces of the plan run on disconnected systems with different methodologies, different cash flow assumptions, different valuation models, different tax frameworks, the plan does not reconcile. The personal income capacity contradicts the post-exit lifestyle assumption. The valuation contradicts the cash flow forecast. The estate plan is built on numbers the planning model never validated.</p>
+        <p class="spine-callout-body">Contnuum runs all seven pillars on one methodology, with one set of formulas, against one shared data picture. It integrates coherently with PX so the personal plan and the business plan reconcile against each other, not just inside their own surfaces. The plan holds up. The math maths.</p>
+        <p class="spine-callout-body">This is what makes a sophisticated business owner plan defensible to the client, to the CPA and the attorney coordinating around it, and to the firm whose name is on the plan.</p>
       </div>
     </div>
   </section>
