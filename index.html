@@ -7,7 +7,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -22,7 +21,11 @@
       --gold-80: #C9A96280;
       --cream: #FAF8F5;
       --cream-light: #FAF6F0;
+      --cream-warm: #F5EFE3;
       --white: #FFFFFF;
+      --light-teal: #E8F4F6;
+      --teal: #2A7F8C;
+      --teal-deep: #1F5E6A;
       --text-dark: #1B2E4A;
       --text-body: #6B6560;
       --text-body-alt: #5A5550;
@@ -37,7 +40,17 @@
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); color: var(--text-dark); line-height: 1.6; }
 
-    .section { width: 100%; display: flex; flex-direction: column; align-items: center; }
+    /* ─── Base Layout ─── */
+    .section {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .section-cream { background: var(--cream); padding: 100px 120px; }
+    .section-white { background: var(--white); padding: 100px 120px; }
+    .container { max-width: 1200px; width: 100%; }
+
     .section-label {
       font-family: var(--font-body);
       font-size: 16px;
@@ -46,15 +59,15 @@
       color: var(--gold);
       text-transform: uppercase;
       text-align: center;
-      display: flex;
-      align-items: center;
-      gap: 12px;
+      margin-bottom: 24px;
     }
     .section-heading {
       font-family: var(--font-heading);
       font-weight: 700;
       color: var(--text-dark);
       text-align: center;
+      font-size: 44px;
+      margin-bottom: 32px;
     }
     .section-body {
       font-family: var(--font-body);
@@ -63,38 +76,22 @@
       text-align: center;
       max-width: 850px;
     }
-    .card-row {
-      display: flex;
-      gap: 24px;
-      width: 100%;
-      max-width: 1200px;
+    .section-lead {
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text-body-alt);
+      margin-bottom: 24px;
     }
-    .card-row > * { flex: 1; }
     .gold-bar { width: 100%; height: 3px; background: var(--gold); }
-
-    /* Question badge */
-    .q-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--navy);
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      padding: 4px 10px;
-      border-radius: 3px;
-    }
-
-    /* Icons */
-    .icon-gold { color: var(--gold); }
-    .icon-24 { width: 24px; height: 24px; }
-    .icon-28 { width: 28px; height: 28px; }
-    .icon-32 { width: 32px; height: 32px; }
 
     /* ─── Hero ─── */
     .hero {
       min-height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       background:
         linear-gradient(to bottom,
           #1B2E4AE0 0%,
@@ -103,134 +100,157 @@
           #243B5A90 88%,
           #FAF8F5 100%),
         url('images/hero-bg.png') center / cover no-repeat;
-      justify-content: center;
-      gap: 40px;
-      padding: 0 120px;
+      padding: 60px 120px;
       position: relative;
     }
-    .hero-badge {
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      max-width: 1000px;
+    }
+    .hero-eyebrow-badge {
       border: 1.5px solid var(--gold);
       padding: 12px 32px;
-      display: inline-flex;
-      align-items: center;
-    }
-    .hero-badge span {
       font-family: var(--font-body);
-      font-size: 14px;
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
       color: var(--gold);
       text-align: center;
+      text-transform: uppercase;
     }
-    .hero-divider { width: 120px; height: 2px; background: var(--gold); }
-    .hero h1 {
+    .hero-headline {
       font-family: var(--font-heading);
       font-size: 72px;
-      font-weight: 700;
+      font-weight: 400;
+      font-style: italic;
       color: var(--cream);
       text-align: center;
       line-height: 1.15;
-      max-width: 1000px;
-      font-style: italic;
     }
-    .hero-subtitle {
+    .hero-sub {
       font-size: 22px;
       color: var(--text-cream);
       line-height: 1.7;
       text-align: center;
       max-width: 780px;
     }
+    .hero-stats {
+      display: flex;
+      gap: 60px;
+      margin: 32px 0;
+    }
+    .hero-stat { text-align: center; }
+    .hero-stat-num {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+    .hero-stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      color: var(--text-cream);
+      text-transform: uppercase;
+      margin-top: 8px;
+    }
+    .hero-ornament {
+      color: var(--gold-50);
+      font-size: 18px;
+      letter-spacing: 4px;
+    }
     .hero-tagline {
       font-family: var(--font-heading);
-      font-size: 24px;
+      font-size: 22px;
       font-style: italic;
       color: var(--text-light);
       text-align: center;
     }
 
-    /* Four Questions (below the fold on hero) */
+    /* ─── Four Questions ─── */
     .four-questions {
-      background: var(--cream);
-      padding: 100px 120px;
-      gap: 60px;
-    }
-    .question-list {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-      max-width: 900px;
       width: 100%;
+      background: var(--cream-warm);
+      padding: 100px 80px;
+      border-top: 1px solid var(--border);
     }
-    .question-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 24px;
-    }
-    .question-mark {
-      font-family: var(--font-heading);
-      font-size: 48px;
-      color: var(--gold);
-      line-height: 1;
-      flex-shrink: 0;
-    }
-    .question-num {
+    .four-questions-intro {
+      text-align: center;
       font-family: var(--font-body);
       font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 60px;
+    }
+    .four-questions-grid {
+      max-width: 920px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .question-row {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 30px;
+      align-items: start;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .question-row:last-child { border-bottom: none; }
+    .question-mark {
+      font-family: var(--font-heading);
+      font-size: 80px;
+      line-height: 0.9;
+      color: var(--gold);
+      font-weight: 400;
+      text-align: center;
+    }
+    .question-block-num {
+      font-family: var(--font-body);
+      font-size: 12px;
       font-weight: 700;
       letter-spacing: 2px;
+      text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 8px;
     }
     .question-text {
-      font-family: var(--font-body);
-      font-size: 20px;
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-    .four-questions .closing-line {
       font-family: var(--font-heading);
-      font-size: 22px;
       font-style: italic;
-      color: var(--text-body);
+      font-size: 24px;
+      line-height: 1.4;
+      color: var(--navy);
+    }
+    .four-questions-closing {
       text-align: center;
+      margin-top: 60px;
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--text-body-alt);
     }
 
-    /* ─── Strategic Frame ─── */
-    .strategic-frame {
-      background: var(--cream);
-      padding: 100px 120px;
-      gap: 48px;
-      border-top: 1px solid var(--border);
-    }
-    .strategic-frame h2 { font-size: 44px; max-width: 900px; font-style: italic; }
-    .strategic-frame .section-body { color: var(--text-body-alt); max-width: 800px; }
-    .qmap-row {
-      display: flex;
-      gap: 20px;
-      width: 100%;
-      max-width: 1200px;
-    }
-    .qmap-row > * { flex: 1; }
-    .qmap-card {
-      border: 1px solid var(--border);
-      background: var(--white);
-      padding: 28px 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .qmap-card .qmap-num { font-size: 14px; font-weight: 700; letter-spacing: 2px; color: var(--gold); }
-    .qmap-card .qmap-text { font-size: 16px; color: var(--text-body); line-height: 1.5; }
-    .qmap-card .qmap-ref { font-size: 14px; font-style: italic; color: var(--text-muted); }
-
-    /* ─── Market / Opportunity ─── */
+    /* ─── Market / Stat Cards ─── */
     .market {
       background: var(--cream);
       padding: 100px 120px;
       gap: 48px;
     }
-    .market h2 { font-size: 44px; max-width: 900px; font-style: italic; }
-    .market .section-body { color: var(--text-body-alt); max-width: 800px; }
+    .market .section-heading { font-style: italic; }
+    .market .section-lead { text-align: center; max-width: 880px; }
+    .card-row {
+      display: flex;
+      gap: 24px;
+      width: 100%;
+      max-width: 1200px;
+    }
+    .card-row > * { flex: 1; }
     .stat-card {
       background: var(--cream-light);
       border: 1px solid var(--border);
@@ -280,420 +300,402 @@
       text-align: center;
     }
 
-    /* ─── Revenue Reality ─── */
-    .revenue {
-      background: var(--white);
-      padding: 100px 120px 80px;
-      gap: 48px;
+    /* ─── The Spine ─── */
+    .spine-heading {
+      font-family: var(--font-heading);
+      font-size: 56px;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 16px;
     }
-    .revenue h2 { font-size: 44px; max-width: 900px; font-style: italic; }
-    .revenue .section-body { color: var(--text-body); max-width: 800px; }
-    .compare-row { display: flex; gap: 32px; width: 100%; max-width: 1200px; }
-    .compare-card {
-      flex: 1;
-      padding: 48px;
+    .spine-sub {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 30px;
+      color: var(--teal-deep);
+      margin-bottom: 48px;
+    }
+    .spine-callout {
+      background: var(--light-teal);
+      border-left: 6px solid var(--teal);
+      padding: 40px 44px;
+      margin-top: 50px;
+    }
+    .spine-callout-label {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 28px;
+    }
+    .spine-job {
+      margin-bottom: 24px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-dark);
+    }
+    .spine-job:last-child { margin-bottom: 0; }
+    .spine-job strong { color: var(--navy); font-weight: 700; }
+
+    /* ─── Flip Card System ─── */
+    .flip-card {
+      perspective: 1400px;
+      cursor: pointer;
+      min-height: 380px;
+      position: relative;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      min-height: 380px;
+      transform-style: preserve-3d;
+      transition: transform 0.7s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+    .flip-card.is-flipped .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-face {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      padding: 36px 40px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      position: relative;
-      overflow: hidden;
     }
-    .compare-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
-    .compare-card.generalist {
+    .flip-card-front {
       background: var(--cream-light);
-      border: 1px solid var(--border);
+      border-left: 6px solid var(--navy);
     }
-    .compare-card.generalist .compare-sublabel,
-    .compare-card.generalist .compare-revenue { color: var(--text-body); }
-    .compare-card.generalist .compare-annual { color: var(--text-body); }
-    .compare-card.generalist .compare-details { color: var(--text-body); }
-    .compare-card.specialized {
-      background: var(--navy);
-      border: 1px solid var(--navy);
+    .flip-card-back {
+      background: var(--light-teal);
+      border-left: 6px solid var(--gold);
+      transform: rotateY(180deg);
     }
-    .compare-card.specialized .compare-sublabel { color: var(--gold); }
-    .compare-card.specialized .compare-revenue { color: var(--gold); }
-    .compare-card.specialized .compare-annual { color: var(--cream); }
-    .compare-card.specialized .compare-details { color: var(--text-light); }
-    .compare-sublabel { font-size: 18px; font-weight: 600; letter-spacing: 2px; text-align: center; }
-    .compare-revenue { font-family: var(--font-heading); font-size: 40px; font-weight: 700; text-align: center; }
-    .compare-annual { font-size: 18px; text-align: center; }
-    .compare-divider-light { width: 100%; height: 1px; background: var(--border); }
-    .compare-divider-dark { width: 100%; height: 1px; background: var(--gold-20); }
-    .compare-details { font-size: 20px; line-height: 1.8; text-align: center; }
-    .revenue-closing {
+    .flip-card-eyebrow {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+    .flip-card-eyebrow-back { color: var(--gold); }
+    .flip-card-title {
       font-family: var(--font-heading);
-      font-size: 22px;
+      font-size: 28px;
+      color: var(--navy);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+    .flip-card-title-back {
+      font-family: var(--font-heading);
       font-style: italic;
-      color: var(--text-body);
-      text-align: center;
-      max-width: 850px;
+      font-size: 22px;
+      color: var(--navy);
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+    .flip-card-body {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text-body-alt);
+      font-style: italic;
+    }
+    .flip-card-body p { margin-bottom: 12px; }
+    .flip-card-back-item {
+      margin-bottom: 14px;
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--text-dark);
+      font-style: normal;
+    }
+    .flip-card-back-item strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+    .flip-card-prompt {
+      position: absolute;
+      bottom: 20px;
+      right: 24px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.85;
     }
 
-    /* ─── Fractional Family Office ─── */
-    .practice-model {
-      background: var(--cream);
-      padding: 100px 120px;
-      gap: 48px;
+    /* ─── Pillar Row ─── */
+    .axis-display {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 32px;
     }
-    .practice-model h2 { font-size: 56px; }
-    .practice-model .section-italic {
+    .pillars-framing {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 19px;
+      color: var(--text-body-alt);
+      max-width: 880px;
+      margin-bottom: 60px;
+      line-height: 1.6;
+    }
+    .pillar-row { margin-bottom: 60px; }
+    .pillar-row:last-of-type { margin-bottom: 0; }
+    .pillar-row-header {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    /* ─── Home Office Economics ─── */
+    .ho-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .ho-card {
+      background: var(--cream-light);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--gold);
+      padding: 32px 36px;
+    }
+    .ho-card-title {
       font-family: var(--font-heading);
       font-size: 24px;
-      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .ho-card-body {
+      font-size: 16px;
+      line-height: 1.65;
       color: var(--text-body-alt);
-      line-height: 1.6;
-      text-align: center;
-      max-width: 800px;
-    }
-    .practice-model .section-body { color: var(--text-body-alt); max-width: 800px; }
-    .philosophy-card {
-      background: var(--cream-light);
-      border: 1px solid var(--border);
-      padding: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      position: relative;
-      overflow: hidden;
-    }
-    .philosophy-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
-    .philosophy-card .card-label { font-size: 16px; font-weight: 700; letter-spacing: 2px; color: var(--gold); }
-    .philosophy-card .card-body { font-size: 18px; color: var(--text-body-alt); line-height: 1.7; }
-    .practice-closing {
-      font-family: var(--font-heading);
-      font-size: 22px;
-      font-style: italic;
-      color: var(--text-body);
-      text-align: center;
-      max-width: 850px;
     }
 
-    /* ─── Seven Pillars ─── */
-    .pillars {
-      background: var(--navy);
-      padding: 100px 120px;
-      gap: 48px;
-    }
-    .pillars .section-label { font-size: 16px; letter-spacing: 4px; }
-    .pillars-axis {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-    .pillars-axis .axis-label { font-size: 18px; font-weight: 600; letter-spacing: 2px; color: var(--text-light); }
-    .pillars-axis .axis-you { font-size: 22px; font-weight: 700; letter-spacing: 2px; color: var(--gold); }
-    .pillars-axis .axis-arrow { font-size: 24px; color: var(--gold-60); }
-    .pillars-subtitle {
-      font-family: var(--font-heading);
-      font-size: 22px;
-      font-style: italic;
-      color: var(--text-light);
-      text-align: center;
-      max-width: 800px;
-    }
-    .pillar-card {
-      background: var(--cream-light);
-      padding: 32px 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .pillar-card .pillar-num { font-family: var(--font-heading); font-size: 36px; font-weight: 700; color: var(--gold); }
-    .pillar-card .pillar-title { font-family: var(--font-heading); font-size: 24px; font-weight: 600; color: var(--text-dark); }
-    .pillar-card .pillar-desc { font-size: 18px; color: var(--text-body); line-height: 1.6; }
-    .pillars-closing-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      max-width: 900px;
-    }
-    .pillars-closing-block h3 {
-      font-family: var(--font-heading);
-      font-size: 28px;
-      font-style: italic;
-      color: var(--cream);
-    }
-    .pillars-closing-block p {
-      font-size: 18px;
-      color: var(--text-light);
-      line-height: 1.7;
-      text-align: center;
-    }
-    .pillar-row { display: flex; gap: 20px; width: 100%; max-width: 1200px; }
-    .pillar-row > * { flex: 1; }
-
-    /* ─── Compounding Streams ─── */
-    .streams {
-      background: var(--cream);
-      padding: 100px 120px;
-      gap: 48px;
-    }
-    .streams h2 { font-size: 36px; max-width: 900px; font-style: italic; }
-    .streams .section-body { color: var(--text-body-alt); max-width: 850px; }
-    .stream-card {
-      background: var(--navy);
-      border: 1px solid var(--navy);
-      padding: 40px 32px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-    .stream-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
-    .stream-card .stream-title { font-family: var(--font-heading); font-size: 24px; font-weight: 600; color: var(--cream); text-align: center; }
-    .stream-card .stream-highlight { font-size: 18px; font-weight: 600; color: var(--gold); text-align: center; }
-    .stream-card .stream-desc { font-size: 17px; color: var(--text-light); line-height: 1.7; text-align: center; }
-
-    /* ─── Two Paths ─── */
-    .paths {
-      background: var(--white);
-      padding: 100px 120px;
-      gap: 48px;
-    }
-    .paths h2 { font-size: 44px; font-style: italic; max-width: 900px; }
-    .paths .section-body { color: var(--text-body); max-width: 800px; }
-    .path-card {
-      background: var(--navy);
-      border: 1px solid var(--navy);
-      padding: 48px 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-    .path-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
-    .path-card .path-sublabel { font-size: 16px; font-weight: 600; letter-spacing: 2px; color: var(--gold); }
-    .path-card .path-title { font-family: var(--font-heading); font-size: 30px; font-weight: 700; color: var(--cream); }
-    .path-divider { width: 100%; height: 1px; background: var(--gold-20); }
-    .path-card .path-desc { font-size: 18px; color: var(--text-light); line-height: 1.7; }
-    .path-card .path-list { list-style: none; padding: 0; }
-    .path-card .path-list li {
-      font-size: 17px;
-      color: var(--text-light);
-      line-height: 1.8;
-      padding-left: 20px;
-      position: relative;
-    }
-    .path-card .path-list li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-    }
-
-    /* Open Question Panel */
-    .open-question {
-      background: var(--cream-light);
-      border: 1px solid var(--border);
-      border-top: 3px solid var(--gold);
-      padding: 60px 80px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
+    /* ─── Pull Quote (Structural Point) ─── */
+    .pull-quote-section {
       width: 100%;
-      max-width: 1200px;
-    }
-    .open-question h3 {
-      font-family: var(--font-heading);
-      font-size: 28px;
-      font-style: italic;
-      color: var(--text-dark);
-    }
-    .open-question p {
-      font-family: var(--font-heading);
-      font-size: 20px;
-      font-style: italic;
-      color: var(--text-body);
-      line-height: 1.7;
-      text-align: center;
-      max-width: 900px;
-    }
-
-    /* ─── Five Components (Operating Model) ─── */
-    .operating-model {
       background: var(--cream);
-      padding: 100px 120px;
-      gap: 48px;
+      padding: 140px 80px;
+      text-align: center;
     }
-    .operating-model h2 { font-size: 44px; font-style: italic; max-width: 900px; }
-    .operating-model .section-body { color: var(--text-body); max-width: 850px; }
-    .component-row { display: flex; gap: 18px; width: 100%; max-width: 1200px; }
-    .component-row > * { flex: 1; }
-    .component-card {
-      border: 1px solid var(--border);
-      background: var(--white);
-      padding: 32px 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .component-card .comp-num { font-size: 13px; font-weight: 700; letter-spacing: 2px; color: var(--gold); }
-    .component-card .comp-title { font-size: 18px; font-weight: 700; color: var(--text-dark); }
-    .component-card .comp-desc { font-size: 16px; color: var(--text-body); line-height: 1.6; }
-    .operating-closing {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-      max-width: 900px;
-    }
-    .operating-closing h3 {
+    .pull-quote-ornament {
+      color: var(--gold);
       font-family: var(--font-heading);
-      font-size: 26px;
-      font-style: italic;
-      color: var(--text-dark);
-      text-align: center;
+      font-size: 22px;
+      letter-spacing: 8px;
+      margin-bottom: 30px;
     }
-    .operating-closing p {
+    .pull-quote-text {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 38px;
+      line-height: 1.35;
+      color: var(--navy);
+      max-width: 920px;
+      margin: 0 auto 30px;
+    }
+    .pull-quote-after {
+      font-family: var(--font-heading);
+      font-style: italic;
       font-size: 18px;
-      color: var(--text-body);
       line-height: 1.7;
-      text-align: center;
+      color: var(--teal-deep);
+      max-width: 720px;
+      margin: 60px auto 0;
     }
 
-    /* ─── Integration ─── */
-    .integration {
-      background: var(--white);
-      padding: 100px 120px;
-      gap: 48px;
+    /* ─── Integration Architecture ─── */
+    .integration-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      max-width: 1000px;
+      margin: 0 auto;
+      margin-top: 50px;
     }
-    .integration h2 { font-size: 40px; font-style: italic; max-width: 1000px; }
-    .integration .section-body { color: var(--text-body); max-width: 850px; }
     .integration-card {
       background: var(--cream-light);
       border: 1px solid var(--border);
-      padding: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      position: relative;
-      overflow: hidden;
-    }
-    .integration-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); }
-    .integration-card .integ-label { font-size: 16px; font-weight: 700; letter-spacing: 2px; color: var(--gold); }
-    .integration-card .integ-body { font-size: 17px; color: var(--text-body-alt); line-height: 1.7; }
-    .integration-closing {
-      font-family: var(--font-heading);
-      font-size: 22px;
-      font-style: italic;
-      color: var(--text-body);
-      text-align: center;
-      max-width: 850px;
-    }
-
-    /* ─── Platform ─── */
-    .platform {
-      background: var(--white);
-      padding: 100px 120px;
-      gap: 48px;
-    }
-    .platform h2 { font-size: 44px; max-width: 900px; font-style: italic; }
-    .platform .section-body { color: var(--text-body); max-width: 850px; }
-    .platform-row { display: flex; gap: 16px; width: 100%; max-width: 1200px; }
-    .platform-row > * { flex: 1; }
-    .platform-card {
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      padding: 28px 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .platform-card .plat-num { font-size: 14px; font-weight: 700; letter-spacing: 2px; color: var(--gold-80); }
-    .platform-card .plat-title { font-size: 18px; font-weight: 700; color: var(--text-dark); }
-    .platform-card .plat-desc { font-size: 16px; color: var(--text-body); line-height: 1.6; }
-    .ai-bar {
-      background: var(--navy);
-      border-radius: 6px;
-      padding: 24px 32px;
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      width: 100%;
-      max-width: 1200px;
-    }
-    .ai-bar-icon { color: var(--gold); flex-shrink: 0; width: 32px; height: 32px; }
-    .ai-bar-title { font-size: 20px; font-weight: 700; color: var(--cream); }
-    .ai-bar-desc { font-size: 16px; color: var(--text-light); line-height: 1.5; }
-    .platform-closing {
-      font-family: var(--font-heading);
-      font-size: 20px;
-      font-style: italic;
-      color: var(--text-body);
-      text-align: center;
-      max-width: 850px;
-    }
-
-    /* ─── Security ─── */
-    .security {
-      background: var(--navy);
-      padding: 100px 120px;
-      gap: 48px;
-    }
-    .security h2 { font-size: 44px; color: var(--cream); max-width: 900px; }
-    .security .section-body { color: var(--text-light); max-width: 850px; }
-    .security-row { display: flex; gap: 24px; width: 100%; max-width: 1200px; }
-    .security-row > * { flex: 1; }
-    .security-card {
-      background: var(--navy-light);
-      border-radius: 6px;
+      border-left: 5px solid var(--gold);
       padding: 32px 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
     }
-    .security-card .sec-icon { color: var(--gold); width: 28px; height: 28px; }
-    .security-card .sec-title { font-size: 20px; font-weight: 700; color: var(--cream); }
-    .security-card .sec-desc { font-size: 16px; color: var(--text-light); line-height: 1.6; }
+    .integration-card-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--navy);
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+    .integration-card-body {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-body-alt);
+    }
+    .integration-closing {
+      text-align: center;
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 22px;
+      color: var(--navy);
+      margin-top: 60px;
+      max-width: 880px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
 
-    /* ─── Closing (Dimensions) ─── */
-    .closing {
-      background: url('images/closing-bg.png') center / cover no-repeat;
-      padding: 100px 120px;
-      gap: 40px;
-      justify-content: center;
-      min-height: 600px;
-    }
-    .closing-deco { font-size: 18px; color: var(--gold-50); text-align: center; }
-    .closing h2 { font-size: 44px; color: var(--cream); font-style: italic; }
-    .closing .section-body { color: var(--text-light); max-width: 800px; }
-    .dimensions-list {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /* ─── Five Components ─── */
+    .components-grid {
+      display: grid;
+      grid-template-columns: 1fr;
       gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .component-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--gold);
+      padding: 36px 40px;
+    }
+    .component-num {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .component-title {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .component-body {
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-body-alt);
+      font-style: italic;
+    }
+    .components-closing-quote {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 28px;
+      text-align: center;
+      color: var(--navy);
+      max-width: 880px;
+      margin: 80px auto 40px;
+      line-height: 1.4;
+    }
+    .components-closing-body {
+      max-width: 820px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .components-closing-body p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-body-alt);
+      margin-bottom: 16px;
+    }
+
+    /* ─── Dimensions Worth Exploring ─── */
+    .dimensions-section {
+      width: 100%;
+      background: linear-gradient(180deg,
+        rgba(15, 30, 61, 0.93) 0%,
+        rgba(27, 46, 74, 0.88) 100%
+      ),
+      url('images/closing-bg.png') center/cover no-repeat,
+      var(--navy);
+      padding: 130px 80px;
+      color: var(--text-cream);
+      text-align: center;
+    }
+    .dimensions-ornament {
+      color: var(--gold);
+      font-size: 22px;
+      letter-spacing: 8px;
+      margin-bottom: 30px;
+      font-family: var(--font-heading);
+    }
+    .dimensions-label {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+    .dimensions-heading {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 52px;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 32px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .dimensions-body {
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text-cream);
       max-width: 800px;
+      margin: 0 auto 60px;
+    }
+    .dimensions-list {
+      max-width: 900px;
+      margin: 0 auto 50px;
     }
     .dimension-item {
       font-family: var(--font-heading);
-      font-size: 20px;
       font-style: italic;
-      color: var(--cream);
-      line-height: 1.6;
-      text-align: center;
-    }
-    .dimension-separator {
-      width: 40px;
-      height: 1px;
-      background: var(--gold);
-    }
-    .closing-final {
-      font-family: var(--font-heading);
       font-size: 22px;
-      font-style: italic;
+      line-height: 1.5;
+      color: var(--white);
+      padding: 24px 20px;
+      border-bottom: 1px solid rgba(201, 169, 98, 0.35);
+      text-align: left;
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 16px;
+    }
+    .dimension-item:last-child { border-bottom: none; }
+    .dimension-item-num {
       color: var(--gold);
-      text-align: center;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .dimensions-closing {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 18px;
+      color: var(--gold);
+      margin-top: 40px;
     }
 
     /* ─── Footer ─── */
@@ -719,105 +721,125 @@
     /* ─── Responsive ─── */
     @media (max-width: 1024px) {
       .hero { padding: 60px 40px; }
-      .hero h1 { font-size: 48px; }
-      .section { padding-left: 40px !important; padding-right: 40px !important; }
-      .card-row, .compare-row, .pillar-row, .platform-row, .security-row, .component-row, .qmap-row { flex-direction: column; }
+      .hero-headline { font-size: 48px; }
+      .hero-stats { gap: 32px; }
+      .hero-stat-num { font-size: 36px; }
+      .section-cream, .section-white { padding: 80px 40px; }
+      .market { padding: 80px 40px; }
+      .card-row { flex-direction: column; }
       .stat-number { font-size: 48px; }
       .quote-section { padding: 60px 40px; }
       .quote-text { font-size: 24px; }
-      .open-question { padding: 40px; }
+      .four-questions { padding: 70px 40px; }
+      .question-text { font-size: 19px; }
+      .question-mark { font-size: 60px; }
+      .spine-heading { font-size: 38px; }
+      .spine-sub { font-size: 22px; }
+      .pull-quote-text { font-size: 28px; }
+      .pull-quote-section { padding: 80px 40px; }
+      .dimensions-heading { font-size: 36px; }
+      .dimensions-section { padding: 80px 40px; }
+      .footer { padding: 60px 40px; }
     }
     @media (max-width: 640px) {
-      .hero h1 { font-size: 36px; }
       .hero { padding: 40px 20px; }
-      .section { padding-left: 20px !important; padding-right: 20px !important; }
+      .hero-headline { font-size: 36px; }
+      .hero-stats { flex-direction: column; gap: 24px; }
+      .section-cream, .section-white { padding: 60px 20px; }
+      .market { padding: 60px 20px; }
       .section-heading { font-size: 28px !important; }
-      .question-item { flex-direction: column; gap: 12px; }
+      .four-questions { padding: 60px 22px; }
+      .question-row { grid-template-columns: 1fr; gap: 16px; }
+      .question-mark { text-align: left; font-size: 56px; }
+      .question-text { font-size: 18px; }
+      .spine-heading { font-size: 32px; }
+      .spine-sub { font-size: 19px; }
+      .spine-callout { padding: 28px 24px; }
+      .flip-card { min-height: 460px; }
+      .flip-card-inner { min-height: 460px; }
+      .pull-quote-text { font-size: 22px; }
+      .dimensions-heading { font-size: 28px; }
+      .dimension-item { font-size: 18px; grid-template-columns: 40px 1fr; }
+      .footer { padding: 40px 20px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- SECTION 1: Hero -->
-  <section class="section hero">
-    <div class="hero-badge"><span>ETERNAL WEALTH PARTNERS &middot; A FIELD PERSPECTIVE FOR NORTHWESTERN MUTUAL HOME OFFICE</span></div>
-    <div class="hero-divider"></div>
-    <h1>Where the Business Owner Plan Lives</h1>
-    <p class="hero-subtitle">Twenty years in the field, one operating system for the most under-served, most lucrative segment we serve.</p>
-    <div class="hero-divider"></div>
-    <p class="hero-tagline">The pages that follow are the answer.</p>
+  <!-- 1. HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-eyebrow-badge">
+        Eternal Wealth Partners &middot; A Field Perspective for Northwestern Mutual Home Office
+      </div>
+      <h1 class="hero-headline">Where the Business Owner Plan Lives</h1>
+      <p class="hero-sub">
+        Twenty years in the field, one operating system for the most under-served, most lucrative segment we serve.
+      </p>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">$124T</div>
+          <div class="hero-stat-label">Wealth in Transfer Through 2048</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">12M</div>
+          <div class="hero-stat-label">Boomer-Owned Businesses Exiting</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">37%</div>
+          <div class="hero-stat-label">Of Advisors Retiring This Decade</div>
+        </div>
+      </div>
+
+      <div class="hero-ornament">&mdash; &#10022; &mdash;</div>
+      <p class="hero-tagline">The pages that follow are the answer.</p>
+    </div>
   </section>
 
-  <!-- SECTION 1b: The Four Questions (below the fold) -->
-  <section class="section four-questions">
-    <div class="question-list">
-      <div class="question-item">
-        <span class="question-mark">?</span>
+  <!-- 2. FOUR QUESTIONS -->
+  <section class="four-questions">
+    <div class="four-questions-intro">The Four Questions This Document Answers</div>
+    <div class="four-questions-grid">
+      <div class="question-row">
+        <div class="question-mark">?</div>
         <div>
-          <div class="question-num">QUESTION 01</div>
+          <div class="question-block-num">Question 01</div>
           <p class="question-text">What happens to the planning, the premium, and the retention NM is currently leaving on the table in the business owner segment?</p>
         </div>
       </div>
-      <div class="question-item">
-        <span class="question-mark">?</span>
+      <div class="question-row">
+        <div class="question-mark">?</div>
         <div>
-          <div class="question-num">QUESTION 02</div>
+          <div class="question-block-num">Question 02</div>
           <p class="question-text">What happens to the assets when the business sells?</p>
         </div>
       </div>
-      <div class="question-item">
-        <span class="question-mark">?</span>
+      <div class="question-row">
+        <div class="question-mark">?</div>
         <div>
-          <div class="question-num">QUESTION 03</div>
+          <div class="question-block-num">Question 03</div>
           <p class="question-text">What happens to the client, and the business itself, across generations?</p>
         </div>
       </div>
-      <div class="question-item">
-        <span class="question-mark">?</span>
+      <div class="question-row">
+        <div class="question-mark">?</div>
         <div>
-          <div class="question-num">QUESTION 04</div>
+          <div class="question-block-num">Question 04</div>
           <p class="question-text">What happens to that relationship as advisors retire and transition?</p>
         </div>
       </div>
     </div>
-    <p class="closing-line">The pages that follow answer each one in turn.</p>
+    <p class="four-questions-closing">The pages that follow answer each one in turn.</p>
   </section>
 
-  <!-- SECTION 2: The Strategic Frame -->
-  <section class="section strategic-frame">
-    <span class="section-label">WHAT IS STRUCTURALLY AT STAKE</span>
-    <h2 class="section-heading">The business owner segment is where four NM strategic questions converge.</h2>
-    <p class="section-body">The business owner segment sits at the intersection of Northwestern Mutual's largest opportunities and largest risks. It is the most lucrative client segment most advisors touch, and one of the most under-served. The work is hard and fragmented, which is why so much of it goes undone. When it does not get done well, four things happen. Planning, premium, and retention get left on the table. Assets walk out the door at the moment of business sale. Multi-generational relationships dissolve at the second-generation transfer. And client continuity breaks when advisors retire and transition.</p>
-    <p class="section-body">The pages that follow are not a sales argument. They are a field perspective on how a fully operationalized solution to those four problems could be built, what it looks like when it is, and the dimensions worth exploring together.</p>
-    <div class="qmap-row">
-      <div class="qmap-card">
-        <div class="qmap-num">Q1</div>
-        <p class="qmap-text">Planning, premium, and retention left on the table</p>
-        <p class="qmap-ref">Answered in Sections 3, 4, 7</p>
-      </div>
-      <div class="qmap-card">
-        <div class="qmap-num">Q2</div>
-        <p class="qmap-text">Assets at the moment of business sale</p>
-        <p class="qmap-ref">Answered in Sections 5, 6, 7</p>
-      </div>
-      <div class="qmap-card">
-        <div class="qmap-num">Q3</div>
-        <p class="qmap-text">Client and business across generations</p>
-        <p class="qmap-ref">Answered in Sections 5, 6, 8</p>
-      </div>
-      <div class="qmap-card">
-        <div class="qmap-num">Q4</div>
-        <p class="qmap-text">Relationship as advisors retire</p>
-        <p class="qmap-ref">Answered in Sections 8, 9, 10</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 3: A Market in Transition -->
+  <!-- 3. MARKET IN TRANSITION -->
   <section class="section market">
-    <span class="section-label"><span class="q-badge">Q1</span><span class="q-badge">Q4</span> ANSWERING QUESTIONS 01 AND 04</span>
-    <h2 class="section-heading">Why the planning is being left on the table, and why advisor transitions threaten retention.</h2>
-    <p class="section-body">Three demographic forces are converging inside the next decade. Each one alone would be the largest planning event of a generation. Together they describe a single strategic moment in which Northwestern Mutual is uniquely positioned and structurally exposed. The first two forces describe the planning, premium, and retention being left on the table today. The third describes what happens to those relationships as the field force itself transitions.</p>
+    <span class="section-label">The Market in Transition &middot; Answering Questions 01 and 04</span>
+    <h2 class="section-heading" style="font-style: italic;">The supply curve and the demand curve are crossing.</h2>
+    <p class="section-lead" style="max-width: 880px; text-align: center;">
+      Three demographic forces are converging inside the next decade. Each one alone would be the largest planning event of a generation. Together they describe a single strategic moment in which Northwestern Mutual is uniquely positioned and structurally exposed.
+    </p>
     <div class="card-row" style="max-width: 1200px;">
       <div class="stat-card">
         <div class="stat-number">$124T</div>
@@ -838,7 +860,7 @@
     <p class="market-closing">The convergence creates the opportunity. The fragmentation of the work prevents the field from capturing it.</p>
   </section>
 
-  <!-- SECTION 4: The Thesis Quote -->
+  <!-- 4. QUOTE -->
   <section class="section quote-section">
     <div class="quote-deco">&ldquo;</div>
     <p class="quote-text">The supply of advisors who can serve sophisticated business owner planning is shrinking at exactly the moment demand is reaching record highs.</p>
@@ -846,347 +868,395 @@
     <p class="quote-attribution">A field perspective on a structural problem.</p>
   </section>
 
-  <!-- SECTION 5: Revenue Reality -->
-  <section class="section revenue">
-    <span class="section-label"><span class="q-badge">Q1</span> ANSWERING QUESTION 01</span>
-    <h2 class="section-heading">The same advisor, the same firm, two different practices, two different outcomes.</h2>
-    <p class="section-body">The economics below describe what the existing data shows is possible at the practice level. The generalist column is the typical NM advisor outcome based on Glassdoor and industry benchmarks. The specialized column is what a field advisor produces when the methodology, the client journey, and the platform supporting the work are all in place. The gap between the two columns is the planning, premium, and retention NM is currently leaving on the table.</p>
-    <div class="compare-row">
-      <div class="compare-card generalist">
-        <i data-lucide="trending-down" class="icon-gold icon-32"></i>
-        <div class="compare-sublabel">GENERALIST PRACTICE</div>
-        <div class="compare-revenue">$150K to $280K</div>
-        <div class="compare-annual">annual revenue</div>
-        <div class="compare-divider-light"></div>
-        <p class="compare-details">100 to 150 client households<br>$3K to $6K per household<br>Linear, transactional, single-event compensation</p>
-      </div>
-      <div class="compare-card specialized">
-        <i data-lucide="trending-up" class="icon-gold icon-32"></i>
-        <div class="compare-sublabel">SPECIALIZED PRACTICE</div>
-        <div class="compare-revenue">$500K to $3M+</div>
-        <div class="compare-annual">annual revenue</div>
-        <div class="compare-divider-dark"></div>
-        <p class="compare-details">30 to 50 deep client relationships<br>$15K to $50K+ per household, blended<br>Multi-year arcs, three compounding revenue streams</p>
-      </div>
-    </div>
-    <p class="revenue-closing">The difference is not advisor talent. It is the methodology, the client journey, and the operating model that supports the work.</p>
-  </section>
-
-  <!-- SECTION 6: Fractional Family Office -->
-  <section class="section practice-model">
-    <span class="section-label"><span class="q-badge">Q2</span><span class="q-badge">Q3</span> THE PRACTICE MODEL &middot; ANSWERING QUESTIONS 02 AND 03</span>
-    <h2 class="section-heading">Fractional Family Office</h2>
-    <p class="section-italic">The model that keeps the assets at the moment of sale, and keeps the relationship across generations.</p>
-    <p class="section-body">A family office is what the wealthiest families have always paid for. A coordinated team that holds the entire financial picture together. Investments, taxes, estate, business, insurance, and the next generation, all under one roof. The fractional family office model brings that coordination to the business owner segment earlier in the wealth journey, at a fraction of the institutional cost. It is the operational answer to what happens at the liquidity event and what happens across generations.</p>
-    <div class="card-row" style="gap: 32px; max-width: 1200px;">
-      <div class="philosophy-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="puzzle" class="icon-gold icon-28"></i>
-        <div class="card-label">THE PROBLEM</div>
-        <p class="card-body">Most business owners do not have a planning problem. They have a coordination problem. The CPA does the taxes. The attorney drafts the documents. The banker manages the credit. The advisor manages the investments. Nobody holds the whole picture together. At the moment of the liquidity event, that fragmentation costs the client and costs the firm.</p>
-      </div>
-      <div class="philosophy-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="layers" class="icon-gold icon-28"></i>
-        <div class="card-label">THE MODEL</div>
-        <p class="card-body">Seven Pillars deliver family-office-level coordination years before the liquidity event. Values, cash flow, risk, tax, valuation, exit, and legacy, integrated under one plan, refreshed across the multi-year relationship. The plan is the coordination.</p>
-      </div>
-      <div class="philosophy-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="target" class="icon-gold icon-28"></i>
-        <div class="card-label">THE ROLE</div>
-        <p class="card-body">The advisor is the quarterback. They coordinate the CPA, the attorney, the banker, the broker, and the planning specialists from the home office. The owner stops project-managing their own plan, and the firm stops watching wealth leak out at the moment it is most concentrated.</p>
-      </div>
-    </div>
-    <p class="practice-closing">This is the operational answer to what happens to the assets and what happens across generations. The next section describes how it works as a methodology.</p>
-  </section>
-
-  <!-- SECTION 7: Seven Pillars -->
-  <section class="section pillars">
-    <span class="section-label"><span class="q-badge">Q2</span><span class="q-badge">Q3</span> THE METHODOLOGY &middot; ANSWERING QUESTIONS 02 AND 03</span>
-    <h2 class="section-heading" style="color: var(--cream); font-size: 44px;">Seven Pillars of the Eternal Wealth Plan&trade;</h2>
-    <div class="pillars-axis">
-      <span class="axis-label">BUSINESS</span>
-      <span class="axis-arrow">&larr;</span>
-      <span class="axis-you">YOU</span>
-      <span class="axis-arrow">&rarr;</span>
-      <span class="axis-label">FAMILY</span>
-    </div>
-    <p class="pillars-subtitle">Twenty years of field development. Seven domains. One coordinated picture.</p>
-    <div class="pillar-row">
-      <div class="pillar-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="compass" class="icon-gold icon-32"></i>
-        <div class="pillar-num">01</div>
-        <div class="pillar-title">Values &amp; Vision</div>
-        <p class="pillar-desc">The foundation everything else is built on.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="wallet" class="icon-gold icon-32"></i>
-        <div class="pillar-num">02</div>
-        <div class="pillar-title">Cash Flow &amp; Balance Sheet</div>
-        <p class="pillar-desc">Guardrails across Growth, Liquidity, and Control.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="shield" class="icon-gold icon-32"></i>
-        <div class="pillar-num">03</div>
-        <div class="pillar-title">Risk &amp; Investment Audit</div>
-        <p class="pillar-desc">Protection, Buy-Sell, key person, portfolio alignment.</p>
-      </div>
-    </div>
-    <div class="pillar-row">
-      <div class="pillar-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="calculator" class="icon-gold icon-32"></i>
-        <div class="pillar-num">04</div>
-        <div class="pillar-title">Lifetime Tax Strategy</div>
-        <p class="pillar-desc">Tax bucket optimization over a lifetime.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="trending-up" class="icon-gold icon-32"></i>
-        <div class="pillar-num">05</div>
-        <div class="pillar-title">Business Valuation</div>
-        <p class="pillar-desc">Enterprise value, value drivers, the exit gap.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="door-open" class="icon-gold icon-32"></i>
-        <div class="pillar-num">06</div>
-        <div class="pillar-title">Exit &amp; Transition</div>
-        <p class="pillar-desc">Readiness, succession, the multi-year roadmap.</p>
-      </div>
-      <div class="pillar-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="heart-handshake" class="icon-gold icon-32"></i>
-        <div class="pillar-num">07</div>
-        <div class="pillar-title">Legacy &amp; Estate</div>
-        <p class="pillar-desc">Wealth transfer, multigenerational planning.</p>
-      </div>
-    </div>
-    <div class="pillars-closing-block">
-      <h3>Why this structure</h3>
-      <p>The Seven Pillars exist because business owner planning fails when it is delivered as seven separate conversations. Values inform cash flow decisions. Cash flow decisions affect risk capacity. Risk capacity shapes tax strategy. Tax strategy supports valuation. Valuation drives exit planning. Exit planning enables legacy. Each pillar feeds the next. The framework is what allows one advisor to hold the whole picture together for one client across two decades.</p>
-      <p>The methodology has been validated and stress-tested in the field over twenty years. It is documented, repeatable, and the same shape for every client. That shape is what makes it teachable, scalable, and ready to be operationalized.</p>
-    </div>
-  </section>
-
-  <!-- SECTION 8: Three Compounding Streams -->
-  <section class="section streams">
-    <span class="section-label"><span class="q-badge">Q1</span><span class="q-badge">Q2</span><span class="q-badge">Q3</span> THE ECONOMICS &middot; ANSWERING QUESTIONS 01, 02, AND 03</span>
-    <h2 class="section-heading">One client. Multiple revenue events. Multiple decades.</h2>
-    <p class="section-body">The economics of a properly served business owner relationship do not look like the economics of a generalist relationship. They look like three streams compounding across a multi-decade arc. Planning fees that scale with enterprise complexity. Insurance premium that scales with business protection rather than personal protection alone. Assets under management that consolidate across the multi-year engagement and accelerate dramatically at the moment of business sale, then continue across the surviving spouse and the next generation.</p>
-    <div class="card-row" style="max-width: 1200px;">
-      <div class="stream-card">
-        <i data-lucide="file-text" class="icon-gold icon-32"></i>
-        <div class="stream-title">Planning Fees</div>
-        <div class="stream-highlight">$9K to $24K per engagement</div>
-        <p class="stream-desc">Scoped through structured discovery. A 50-relationship business owner practice generates planning fee revenue alone that exceeds total revenue of a typical generalist practice.</p>
-      </div>
-      <div class="stream-card">
-        <i data-lucide="shield" class="icon-gold icon-32"></i>
-        <div class="stream-title">Insurance Premium</div>
-        <div class="stream-highlight">5x to 20x personal-only scale</div>
-        <p class="stream-desc">Buy-Sell funding, key person, executive carve-out, and personal protection layered together. A single business owner engagement surfaces categorically different premium economics than a personal-only relationship.</p>
-      </div>
-      <div class="stream-card">
-        <i data-lucide="trending-up" class="icon-gold icon-32"></i>
-        <div class="stream-title">Assets Under Management</div>
-        <div class="stream-highlight">The exit event is the inflection</div>
-        <p class="stream-desc">Qualified plan consolidation across the engagement, the largest single AUM event at the sale of the business, and post-exit multigenerational planning. Practices that earn the relationship through the exit own decades of compounding revenue.</p>
+  <!-- 5. THE SPINE -->
+  <section class="section section-cream">
+    <div class="container">
+      <span class="section-label">The Spine of This Document</span>
+      <h2 class="spine-heading">The Seven Pillars are the methodology.</h2>
+      <p class="spine-sub">Contnuum is the system that makes them easy to run.</p>
+      <p class="section-lead" style="max-width: 880px;">
+        Sophisticated business owner planning is a complex craft. It is the work the wealthiest families have always paid for and the work most advisors do not deliver because the depth required is hard to maintain across a busy practice. The Seven Pillars of the Eternal Wealth Plan codify the methodology that delivers the work. Contnuum is the way to facilitate and do the planning the methodology calls for.
+      </p>
+      <p class="section-lead" style="max-width: 880px;">
+        Contnuum does not replace the methodology. It does not replace the advisor. It is the operating layer that makes a complex framework runnable across a field force, by any qualified advisor, in any market, with the depth intact.
+      </p>
+      <div class="spine-callout">
+        <div class="spine-callout-label">What the system does</div>
+        <p class="spine-job"><strong>It deepens the client relationship.</strong> Every interaction is documented. Every plan is current. Every pillar conversation is sequenced. The client experiences coordinated planning, not seven separate conversations.</p>
+        <p class="spine-job"><strong>It drives plan implementation at every level.</strong> Recommendations are pre-populated with NM-approved language. Handoffs to Concierge Planning, Private Client Services, and Fee-Based Planning happen at the moments they belong. The advisor approves and presents. Implementation happens on rails.</p>
+        <p class="spine-job"><strong>It makes the team's job easier.</strong> Notes from client calls flow into the planning workflow without re-keying. Visualizations populate from approved templates. The senior advisor stops being the bottleneck. Associate financial reps and case managers can run more of the work independently.</p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 9: Two Paths to Specialization -->
-  <section class="section paths">
-    <span class="section-label"><span class="q-badge">Q4</span> SCALING THE METHODOLOGY &middot; ANSWERING QUESTION 04</span>
-    <h2 class="section-heading">How a field-developed methodology becomes a firm-wide capability.</h2>
-    <p class="section-body">The methodology described above was developed in one field practice over twenty years. Its first replication has happened across two structured programs, both of which have been field-tested with NM advisors. The Study Group has installed the framework in individual advisor practices over twelve-month engagements. Practice Transformation has installed it across Ensemble managing partners and their teams. Both are mechanisms for answering Question 04, which is what happens to client relationships as advisors retire and transition. Documented methodology travels. Heroics do not.</p>
-    <div class="card-row" style="gap: 32px; max-width: 1200px;">
-      <div class="path-card">
-        <div class="path-sublabel">INDIVIDUAL ADVISOR COHORT</div>
-        <div class="path-title">The Study Group</div>
-        <div class="path-divider"></div>
-        <p class="path-desc">Individual advisor cohort, 12 months, four phases.</p>
-        <ul class="path-list">
-          <li>Get the Client, Build the Case, Deepen and Expand, Close and Scale</li>
-          <li>Monthly 1:1 coaching, peer cohort hot seats, deliverable templates</li>
-          <li>Field-tested with NM advisors across multiple network offices</li>
-        </ul>
+  <!-- 6. SEVEN PILLARS WITH FLIP CARDS -->
+  <section class="section section-white">
+    <div class="container">
+      <span class="section-label">The Methodology &middot; Answering All Four Questions</span>
+      <h2 class="section-heading">Seven Pillars, Seven Flip Panels.</h2>
+      <p class="axis-display">BUSINESS &larr; YOU &rarr; FAMILY</p>
+      <p class="pillars-framing">
+        Each pillar is the methodology on the front, the system on the back. Click any card to see how the system facilitates the work and makes it easy to run inside Northwestern Mutual's existing infrastructure.
+      </p>
+
+      <!-- PILLAR 01 -->
+      <div class="pillar-row">
+        <div class="pillar-row-header">PILLAR 01 &middot; VALUES &amp; VISION</div>
+        <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="flip-card-eyebrow">Pillar 01 &middot; Methodology</div>
+              <h3 class="flip-card-title">Values &amp; Vision</h3>
+              <div class="flip-card-body">
+                <p>What the owner actually wants for life, family, and business. The work that anchors every later pillar to a real purpose, not a generic plan.</p>
+                <p>Discovery exercises, vision statements, and the ranking of Growth, Liquidity, and Control. Without this, every later conversation lacks a place to land.</p>
+              </div>
+              <div class="flip-card-prompt">&rarr; Tap to see the system</div>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <div class="flip-card-eyebrow flip-card-eyebrow-back">How the System Facilitates This Work</div>
+              <h3 class="flip-card-title-back">The system runs the discovery on rails.</h3>
+              <div>
+                <p class="flip-card-back-item"><strong>AILA captures the conversation.</strong> The values discovery call is recorded and transcribed automatically. Contnuum ingests the transcript and pulls the owner's stated priorities into the workflow.</p>
+                <p class="flip-card-back-item"><strong>The intranet GPT supplies framing.</strong> Pre-approved discovery questions, vision statement templates, and the Growth-Liquidity-Control ranking exercise come pre-populated.</p>
+                <p class="flip-card-back-item"><strong>PX stays in sync.</strong> Personal vision and family priorities push to PX so the personal planning side reflects what was discovered. No re-keying, no drift.</p>
+                <p class="flip-card-back-item"><strong>Output: the foundation document.</strong> A reference artifact that anchors every later pillar conversation, generated automatically from the call.</p>
+              </div>
+              <div class="flip-card-prompt">&larr; Tap to flip back</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="path-card">
-        <div class="path-sublabel">ENSEMBLE TEAMS</div>
-        <div class="path-title">Practice Transformation</div>
-        <div class="path-divider"></div>
-        <p class="path-desc">Ensemble teams, custom duration.</p>
-        <ul class="path-list">
-          <li>The methodology installed across an entire team, not a single advisor</li>
-          <li>The quarterback coordination model and practice transition coaching modules</li>
-          <li>Aligned with Sophisticated Planning Strategies, designed to complement rather than compete</li>
-        </ul>
+
+      <!-- PILLAR 02 -->
+      <div class="pillar-row">
+        <div class="pillar-row-header">PILLAR 02 &middot; CASH FLOW &amp; BALANCE SHEET ALIGNMENT</div>
+        <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="flip-card-eyebrow">Pillar 02 &middot; Methodology</div>
+              <h3 class="flip-card-title">Cash Flow &amp; Balance Sheet Alignment</h3>
+              <div class="flip-card-body">
+                <p>How cash actually moves through the business and the personal balance sheet. The diagnostic that gets honest about whether the business is serving the vision.</p>
+                <p>The Eternal Wealth Snapshot, the Eternal Wealth Guardrails, and the multi-year profitability trend analysis. The 4-week vacation test for owner dependency lives here.</p>
+              </div>
+              <div class="flip-card-prompt">&rarr; Tap to see the system</div>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <div class="flip-card-eyebrow flip-card-eyebrow-back">How the System Facilitates This Work</div>
+              <h3 class="flip-card-title-back">The system normalizes the numbers.</h3>
+              <div>
+                <p class="flip-card-back-item"><strong>Direct ingestion of business financials.</strong> Contnuum pulls P&amp;L, balance sheet, and working capital from the accounting system. The advisor reviews; Contnuum does not require manual entry.</p>
+                <p class="flip-card-back-item"><strong>Owner add-backs surfaced automatically.</strong> Personal expenses run through the business are flagged for review. The advisor confirms; the system normalizes.</p>
+                <p class="flip-card-back-item"><strong>PX integration on the personal side.</strong> Personal cash flow and net worth populate from PX so the business and personal pictures are reconciled in real time.</p>
+                <p class="flip-card-back-item"><strong>Output: the Eternal Wealth Snapshot.</strong> One-page financial picture, written for clarity, generated from current data on every refresh.</p>
+              </div>
+              <div class="flip-card-prompt">&larr; Tap to flip back</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="open-question">
-      <h3>The unanswered question</h3>
-      <p>Both paths above are mechanisms for spreading the methodology one practice at a time. The strategic question Question 04 raises is different. What does it look like when the methodology is operationalized at the scale of the entire field force, with every retiring advisor's relationships transitioning under the same framework, every Ensemble equipped to deliver the work the same way, and every business owner client across the field experiencing the same coordinated planning regardless of which advisor sits across the table?</p>
-      <p>That question is what the next sections describe.</p>
+
+      <!-- PILLAR 03 -->
+      <div class="pillar-row">
+        <div class="pillar-row-header">PILLAR 03 &middot; RISK &amp; INVESTMENT AUDIT</div>
+        <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="flip-card-eyebrow">Pillar 03 &middot; Methodology</div>
+              <h3 class="flip-card-title">Risk &amp; Investment Audit</h3>
+              <div class="flip-card-body">
+                <p>A complete inventory of personal and business protection, evaluated against actual exposure rather than face amounts.</p>
+                <p>Buy-Sell agreement review, key person assessment, executive carve-out planning, and investment portfolio alignment to the goals it is meant to serve.</p>
+              </div>
+              <div class="flip-card-prompt">&rarr; Tap to see the system</div>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <div class="flip-card-eyebrow flip-card-eyebrow-back">How the System Facilitates This Work</div>
+              <h3 class="flip-card-title-back">The system reads the agreement and runs the audit.</h3>
+              <div>
+                <p class="flip-card-back-item"><strong>The Buy-Sell agreement gets read.</strong> AILA captures the call where the operating agreement is discussed; Contnuum pulls funding mechanism, trigger events, and valuation methodology into the audit workflow.</p>
+                <p class="flip-card-back-item"><strong>Funding gaps flagged automatically.</strong> The system compares agreement requirements against protection in force. The advisor presents the gap, not calculates it.</p>
+                <p class="flip-card-back-item"><strong>Recommendations pre-populated.</strong> The intranet GPT supplies NM-approved language for protection recommendations and visual templates for the report.</p>
+                <p class="flip-card-back-item"><strong>The natural handoffs are built in.</strong> Investment alignment routes to Private Client Services. Complex protection cases route to Concierge Planning. The audit fee flows through Fee-Based Planning.</p>
+              </div>
+              <div class="flip-card-prompt">&larr; Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLAR 04 -->
+      <div class="pillar-row">
+        <div class="pillar-row-header">PILLAR 04 &middot; LIFETIME TAX-EFFICIENT STRATEGY</div>
+        <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="flip-card-eyebrow">Pillar 04 &middot; Methodology</div>
+              <h3 class="flip-card-title">Lifetime Tax-Efficient Strategy</h3>
+              <div class="flip-card-body">
+                <p>Multi-decade tax strategy across the three tax buckets, tied to business entity choices, equity compensation events, and the eventual exit transaction.</p>
+                <p>RSU, ISO, NSO, ESOP, 83B, AMT, ownership structures, qualified plans, and executive carve-out planning. The work that quietly improves every other pillar when done well.</p>
+              </div>
+              <div class="flip-card-prompt">&rarr; Tap to see the system</div>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <div class="flip-card-eyebrow flip-card-eyebrow-back">How the System Facilitates This Work</div>
+              <h3 class="flip-card-title-back">The system holds the multi-year tax map.</h3>
+              <div>
+                <p class="flip-card-back-item"><strong>Tax bucket optimization runs continuously.</strong> Contnuum models the three tax buckets across the multi-year horizon and surfaces the rebalancing opportunities the advisor presents to the CPA.</p>
+                <p class="flip-card-back-item"><strong>Equity event triggers tracked.</strong> RSU vest dates, ISO exercise windows, 83B election deadlines, and AMT exposure all surface in the workflow at the moment they require action.</p>
+                <p class="flip-card-back-item"><strong>Qualified plan recommendations pre-built.</strong> SEP, SIMPLE, solo 401(k), executive plans, and SERPs surfaced based on owner profile. Concierge Planning supports the complex cases.</p>
+                <p class="flip-card-back-item"><strong>The CPA stays in the loop, not in the dark.</strong> Tax strategy memos generated from approved templates, ready for the CPA to execute. Coordination, not duplication.</p>
+              </div>
+              <div class="flip-card-prompt">&larr; Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLAR 05 -->
+      <div class="pillar-row">
+        <div class="pillar-row-header">PILLAR 05 &middot; BUSINESS VALUATION</div>
+        <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="flip-card-eyebrow">Pillar 05 &middot; Methodology</div>
+              <h3 class="flip-card-title">Business Valuation</h3>
+              <div class="flip-card-body">
+                <p>Current enterprise value, the five value drivers, and the gap between what the business is worth today and what it would need to be worth for the owner to walk away.</p>
+                <p>Five Value Drivers Assessment, Transferability Score, Exit Gap Calculation, and the Value Acceleration Roadmap. A plan without a current valuation is a plan without a scoreboard.</p>
+              </div>
+              <div class="flip-card-prompt">&rarr; Tap to see the system</div>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <div class="flip-card-eyebrow flip-card-eyebrow-back">How the System Facilitates This Work</div>
+              <h3 class="flip-card-title-back">Contnuum runs the valuation engine.</h3>
+              <div>
+                <p class="flip-card-back-item"><strong>Five Value Drivers Assessment automated.</strong> Concentration risk, cash flow versus enterprise value balance, financial performance, growth potential, and recurring revenue all scored from financial data and structured owner input.</p>
+                <p class="flip-card-back-item"><strong>Transferability Score calculated.</strong> How much of the value walks out the door when the owner does. The system quantifies what most advisors estimate.</p>
+                <p class="flip-card-back-item"><strong>Exit Gap Calculation continuous.</strong> Current value compared against the value the owner needs to exit comfortably. The gap is the planning agenda.</p>
+                <p class="flip-card-back-item"><strong>Value Acceleration Roadmap surfaced.</strong> The multi-year plan to close the gap, sequenced by impact and dependency. The advisor presents; the system has done the work.</p>
+              </div>
+              <div class="flip-card-prompt">&larr; Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLAR 06 -->
+      <div class="pillar-row">
+        <div class="pillar-row-header">PILLAR 06 &middot; EXIT &amp; TRANSITION PLANNING</div>
+        <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="flip-card-eyebrow">Pillar 06 &middot; Methodology</div>
+              <h3 class="flip-card-title">Exit &amp; Transition Planning</h3>
+              <div class="flip-card-body">
+                <p>How the owner actually exits, on their terms, to family, employees, or a buyer. Where every prior pillar comes due.</p>
+                <p>Exit Readiness Assessment, Exit Strategy Options Review, the Multi-Year Exit Roadmap, and the Post-Exit Income and Lifestyle Plan. The work that prevents the 76% post-exit regret rate.</p>
+              </div>
+              <div class="flip-card-prompt">&rarr; Tap to see the system</div>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <div class="flip-card-eyebrow flip-card-eyebrow-back">How the System Facilitates This Work</div>
+              <h3 class="flip-card-title-back">The system sequences the exit.</h3>
+              <div>
+                <p class="flip-card-back-item"><strong>Exit Readiness Assessment scored.</strong> Personal, financial, and business readiness on the same rubric, refreshed continuously. The advisor sees the gap before the buyer does.</p>
+                <p class="flip-card-back-item"><strong>Exit Strategy Options Review modeled.</strong> Full sale, structured earnout, key employee or ESOP transition, family succession. Each option modeled against the owner's vision and value gap.</p>
+                <p class="flip-card-back-item"><strong>Multi-Year Exit Roadmap built backward.</strong> Sequenced from the desired exit date, with the milestones, planning work, and value acceleration moves required to land it.</p>
+                <p class="flip-card-back-item"><strong>Post-Exit Income Plan integrates with PX.</strong> Personal cash flow, retirement income, and post-exit lifestyle all populate to PX so the personal plan stays current with the exit plan.</p>
+              </div>
+              <div class="flip-card-prompt">&larr; Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PILLAR 07 -->
+      <div class="pillar-row">
+        <div class="pillar-row-header">PILLAR 07 &middot; LEGACY &amp; ESTATE PLANNING</div>
+        <div class="flip-card" onclick="this.classList.toggle('is-flipped')">
+          <div class="flip-card-inner">
+            <div class="flip-card-face flip-card-front">
+              <div class="flip-card-eyebrow">Pillar 07 &middot; Methodology</div>
+              <h3 class="flip-card-title">Legacy &amp; Estate Planning</h3>
+              <div class="flip-card-body">
+                <p>What happens to the wealth across generations, the surviving spouse, and the next generation. The destination every prior pillar is pointing toward.</p>
+                <p>Wills, Trusts, Asset Ownership review, Generation Skipping analysis, Liquidity Needs at death, Charitable Giving strategy, and Gifting Strategy. The estate attorney drafts the documents; the framework gives the documents a coherent shape.</p>
+              </div>
+              <div class="flip-card-prompt">&rarr; Tap to see the system</div>
+            </div>
+            <div class="flip-card-face flip-card-back">
+              <div class="flip-card-eyebrow flip-card-eyebrow-back">How the System Facilitates This Work</div>
+              <h3 class="flip-card-title-back">The system holds the multigenerational plan.</h3>
+              <div>
+                <p class="flip-card-back-item"><strong>Estate diagram generated automatically.</strong> Asset ownership, beneficiary designations, and the flow at death visualized from current data. The advisor reviews; the attorney executes.</p>
+                <p class="flip-card-back-item"><strong>Gifting strategy modeled.</strong> Annual exclusion, lifetime exemption, and generation-skipping decisions modeled across the multi-year horizon. The advisor presents the strategy, not calculates the limits.</p>
+                <p class="flip-card-back-item"><strong>Charitable Giving routed properly.</strong> DAF, CRT, and direct giving strategies surfaced. Concierge Planning supports the complex charitable structures.</p>
+                <p class="flip-card-back-item"><strong>The next generation enters the picture.</strong> Family meeting structures, multigenerational planning conversations, and the relationship-extension protocol all built into the workflow.</p>
+              </div>
+              <div class="flip-card-prompt">&larr; Tap to flip back</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- SECTION 10: What Fully Operationalized Looks Like -->
-  <section class="section operating-model">
-    <span class="section-label"><span class="q-badge">Q1</span><span class="q-badge">Q2</span><span class="q-badge">Q3</span><span class="q-badge">Q4</span> FULLY OPERATIONALIZED &middot; ANSWERING ALL FOUR QUESTIONS</span>
-    <h2 class="section-heading">Five components, one operating model.</h2>
-    <p class="section-body">A methodology this rich, deployed across a field this large, requires more than a training program. It requires an integrated operating model. Five components, each addressing a piece of what makes the work hard and fragmented today. The methodology is what the advisor delivers. The other four are what allows the firm to deliver it the same way every time.</p>
-    <div class="component-row">
-      <div class="component-card">
-        <i data-lucide="compass" class="icon-gold icon-28"></i>
-        <div class="comp-num">01</div>
-        <div class="comp-title">The Methodology</div>
-        <p class="comp-desc">The Seven Pillars of the Eternal Wealth Plan, validated and stress-tested in the field over twenty years. Documented, repeatable, the same shape for every client. The framework that allows one advisor to hold the whole picture together across two decades of relationship.</p>
-      </div>
-      <div class="component-card">
-        <i data-lucide="route" class="icon-gold icon-28"></i>
-        <div class="comp-num">02</div>
-        <div class="comp-title">The Client Journey</div>
-        <p class="comp-desc">A defined experience that the advisor and the client move through together. Discovery, valuation, the multi-year roadmap, quarterly review, exit readiness, post-exit planning. The journey is the same for every client. That sameness is what makes it teachable, repeatable, and reliable across a field force.</p>
-      </div>
-      <div class="component-card">
-        <i data-lucide="layers" class="icon-gold icon-28"></i>
-        <div class="comp-num">03</div>
-        <div class="comp-title">The Planning Experience</div>
-        <p class="comp-desc">The deliverables the client sees. The Roadmap, the Eternal Wealth Snapshot, the Eternal Wealth Guardrails, the Five Value Drivers Assessment, the Exit Gap Calculation. Every artifact ties to a pillar. Every pillar ties to a question.</p>
-      </div>
-    </div>
-    <div class="component-row" style="max-width: 800px;">
-      <div class="component-card">
-        <i data-lucide="layout-dashboard" class="icon-gold icon-28"></i>
-        <div class="comp-num">04</div>
-        <div class="comp-title">The Platform Substrate</div>
-        <p class="comp-desc">The technology that holds the analysis, the workflow, the documentation, and the audit trail that operationalized planning at this scale demands. SOC2 compliant, FINRA and SEC audit-ready, single-tenant data sovereignty, explainable AI by design. Built to work alongside the AI tools NM is already rolling out, not in place of them.</p>
-      </div>
-      <div class="component-card">
-        <i data-lucide="link" class="icon-gold icon-28"></i>
-        <div class="comp-num">05</div>
-        <div class="comp-title">The Client-Facing Extension</div>
-        <p class="comp-desc">A client experience layer in the spirit of NM Connect, built specifically for business owner clients. The owner sees their plan, their valuation, their roadmap, and their progress in one place. The advisor sees what the client sees, plus the analytical depth that makes the conversation productive.</p>
-      </div>
-    </div>
-    <div class="operating-closing">
-      <h3>No single component is the answer. The answer is what happens when all five operate together.</h3>
-      <p>A methodology without a platform is a binder on a shelf. A platform without a methodology is software in search of a use case. A client journey without deliverables is theater. Deliverables without a client-facing extension are documents in a filing cabinet.</p>
-      <p>The five components have to be designed together, deployed together, and supported together. That integration is what is missing in the market today, and what makes operationalizing this work at scale a different problem from any individual component of it.</p>
-    </div>
-  </section>
-
-  <!-- SECTION 11: Designed to Work Alongside NM -->
-  <section class="section integration">
-    <span class="section-label">INTEGRATION &middot; DESIGNED TO COMPLEMENT, NOT COMPETE</span>
-    <h2 class="section-heading">Built to work alongside NM Connect, the AI tools the firm is rolling out, and the Sophisticated Planning Strategies team.</h2>
-    <p class="section-body">This is a field perspective on what fully operationalized looks like. It is also a perspective developed inside Northwestern Mutual, by an advisor who has spent twenty years working alongside the home office systems and teams that already exist. The model below is designed to integrate with that infrastructure, not to replace any part of it. Three integration points specifically.</p>
-    <div class="card-row" style="gap: 32px; max-width: 1200px;">
-      <div class="integration-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="link" class="icon-gold icon-28"></i>
-        <div class="integ-label">WITH NM CONNECT</div>
-        <p class="integ-body">The client-facing extension is built in the spirit of NM Connect. Not a replacement for it, not a competing experience. A specialized extension that brings the same coordinated, modern client experience to the business owner segment, where the planning is more complex and the deliverables are more numerous than the standard client experience accommodates.</p>
-      </div>
-      <div class="integration-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="brain" class="icon-gold icon-28"></i>
-        <div class="integ-label">WITH NM'S AI ROLLOUT</div>
-        <p class="integ-body">The platform substrate is designed to be AI-native and AI-explainable. It complements the AI tools the firm is already rolling out by addressing the specific analytical depth that business owner planning requires. Valuation modeling, cash flow normalization, exit scenario analysis, and the integrated tax-and-estate work that crosses NM's product lines.</p>
-      </div>
-      <div class="integration-card">
-        <div class="gold-bar"></div>
-        <i data-lucide="users" class="icon-gold icon-28"></i>
-        <div class="integ-label">WITH SOPHISTICATED PLANNING STRATEGIES</div>
-        <p class="integ-body">The methodology is designed to bring SPS-quality work to more clients earlier in the relationship. SPS today supports advisors on sophisticated cases. The fractional family office model brings that level of coordination into the standard business owner engagement, so SPS becomes the depth resource for the most advanced cases rather than the only access point to advanced planning.</p>
-      </div>
-    </div>
-    <p class="integration-closing">A field-developed model only works inside Northwestern Mutual if it integrates with what Northwestern Mutual is already doing. This is that integration thinking.</p>
-  </section>
-
-  <!-- SECTION 12: The Platform Substrate -->
-  <section class="section platform">
-    <span class="section-label">COMPONENT 04 &middot; THE PLATFORM SUBSTRATE</span>
-    <h2 class="section-heading">What the platform substrate looks like when it exists.</h2>
-    <p class="section-body">The platform substrate is one of the five components of the operationalized model. It exists to hold the analytical depth that the methodology demands, in a workflow the advisor can run repeatably, with the audit trail and compliance posture the firm requires. Seven planning systems, each tied to one of the seven pillars. Twenty expert AI agents trained on the methodology and constrained to it. The platform is described here at the level of what it does. The detail of what it would take to build at NM scale is a separate conversation.</p>
-    <div class="platform-row">
-      <div class="platform-card"><i data-lucide="activity" class="icon-gold icon-24"></i><span class="plat-num">01</span><div class="plat-title">Financial Analysis</div><p class="plat-desc">P&amp;L, balance sheet, working capital, and KPI benchmarks against industry data.</p></div>
-      <div class="platform-card"><i data-lucide="trending-up" class="icon-gold icon-24"></i><span class="plat-num">02</span><div class="plat-title">Business Valuation</div><p class="plat-desc">EBITDA, SDE, revenue, and DCF methods with private company adjustments.</p></div>
-      <div class="platform-card"><i data-lucide="calculator" class="icon-gold icon-24"></i><span class="plat-num">03</span><div class="plat-title">Tax Strategy</div><p class="plat-desc">Entity optimization, exit planning, and lifetime tax minimization across structures.</p></div>
-      <div class="platform-card"><i data-lucide="shield-alert" class="icon-gold icon-24"></i><span class="plat-num">04</span><div class="plat-title">Risk &amp; Investment Audit</div><p class="plat-desc">Concentration, key person, continuity, and guardrail monitoring in real time.</p></div>
-    </div>
-    <div class="platform-row">
-      <div class="platform-card"><i data-lucide="wallet" class="icon-gold icon-24"></i><span class="plat-num">05</span><div class="plat-title">Personal Wealth</div><p class="plat-desc">Net worth aggregation, retirement readiness, and exit proceeds planning.</p></div>
-      <div class="platform-card"><i data-lucide="git-branch" class="icon-gold icon-24"></i><span class="plat-num">06</span><div class="plat-title">Scenario Modeling</div><p class="plat-desc">What-if analysis, Monte Carlo forecasting, and liquidity runway projections.</p></div>
-      <div class="platform-card"><i data-lucide="door-open" class="icon-gold icon-24"></i><span class="plat-num">07</span><div class="plat-title">Exit &amp; Transition</div><p class="plat-desc">Sale analysis, succession strategy, data room preparation, and readiness scoring.</p></div>
-    </div>
-    <div class="ai-bar">
-      <i data-lucide="brain" class="ai-bar-icon"></i>
-      <div>
-        <div class="ai-bar-title">AI Advisory Intelligence</div>
-        <p class="ai-bar-desc">Twenty expert agents across seven pillars. SME-trained, audit-ready, explainable by design. Built to complement NM's AI rollout, not to operate outside it.</p>
-      </div>
-    </div>
-    <p class="platform-closing">This is what the platform component looks like at the level of capability. What it would take to build at firm scale, in a way that integrates with NM's existing infrastructure, is the conversation worth having.</p>
-  </section>
-
-  <!-- SECTION 13: Built for Trust -->
-  <section class="section security">
-    <span class="section-label" style="color: var(--gold);">COMPLIANCE-GRADE BY DESIGN</span>
-    <h2 class="section-heading" style="color: var(--cream);">Compliance is the architecture, not a feature.</h2>
-    <p class="section-body" style="color: var(--text-light);">A platform that holds advisor-client conversations, planning recommendations, and audit-ready documentation has to be built for the regulatory environment NM operates in, not adapted to it after the fact. The four design principles below are the architectural starting point.</p>
-    <div class="security-row">
-      <div class="security-card">
-        <i data-lucide="shield-check" class="sec-icon"></i>
-        <div class="sec-title">SOC2 Compliant</div>
-        <p class="sec-desc">Enterprise-grade security controls. Encryption at rest and in transit. Continuous monitoring with documented evidence of compliance.</p>
-      </div>
-      <div class="security-card">
-        <i data-lucide="file-check" class="sec-icon"></i>
-        <div class="sec-title">FINRA/SEC Audit Trail</div>
-        <p class="sec-desc">Every recommendation logged, timestamped, and attributable. Full regulatory defensibility from intake through delivery.</p>
-      </div>
-      <div class="security-card">
-        <i data-lucide="eye" class="sec-icon"></i>
-        <div class="sec-title">Explainable AI</div>
-        <p class="sec-desc">No black-box decisions. Every insight traces to source data, methodology, and assumptions. Advisors see the reasoning, not just the output.</p>
-      </div>
-      <div class="security-card">
-        <i data-lucide="lock" class="sec-icon"></i>
-        <div class="sec-title">Data Sovereignty</div>
-        <p class="sec-desc">Single-tenant architecture. Client data never crosses firm boundaries. Your clients' information stays yours.</p>
+  <!-- 7. HOME OFFICE ECONOMICS -->
+  <section class="section section-cream">
+    <div class="container">
+      <span class="section-label">Answering Question 01 &middot; The Home Office Economics</span>
+      <h2 class="section-heading">Where Northwestern Mutual gets paid when the methodology runs.</h2>
+      <p class="section-lead" style="text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+        The economic logic of this operating model favors Northwestern Mutual home office at every layer. The methodology surfaces the planning conversations. The system drives the implementation of those conversations. The implementation flows through the home office services NM has already built and already monetizes. More advisors running the playbook means more usage of those services, not less.
+      </p>
+      <p class="section-lead" style="text-align: center; max-width: 900px; margin-left: auto; margin-right: auto; margin-bottom: 50px;">
+        Three home office services in particular sit directly inside the workflow.
+      </p>
+      <div class="ho-cards">
+        <div class="ho-card">
+          <h3 class="ho-card-title">Concierge Planning</h3>
+          <p class="ho-card-body">Pillars 04, 05, 06, and 07 all surface complex planning cases that route naturally to Concierge Planning. The system flags the cases that warrant home office support and routes them through the existing Concierge channel. More sophisticated planning being done in the field means more Concierge engagements, not fewer.</p>
+        </div>
+        <div class="ho-card">
+          <h3 class="ho-card-title">Private Client Services</h3>
+          <p class="ho-card-body">Pillar 03 surfaces the investment alignment work; the natural handoff is to Private Client Services. The advisor stays in the relationship driver's seat as facilitator; PCS manages the assets. Both the advisor and the home office are compensated through the structure NM has already built. The system sequences the handoff at the moment the client conversation supports it.</p>
+        </div>
+        <div class="ho-card">
+          <h3 class="ho-card-title">Fee-Based Planning</h3>
+          <p class="ho-card-body">Every pillar generates planning fee work. The system scopes the engagements through structured discovery rather than case-by-case negotiation, then routes the fees through Fee-Based Planning's existing infrastructure. A 50-relationship business owner practice generates $750K in planning fee revenue alone, all flowing through NM's established fee channel.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SECTION 14: Dimensions Worth Exploring -->
-  <section class="section closing">
-    <div class="closing-deco">&mdash; &#10037; &mdash;</div>
-    <span class="section-label" style="color: var(--gold);">WHAT THIS CONVERSATION COULD BECOME</span>
-    <h2 class="section-heading" style="color: var(--cream);">The dimensions worth exploring together.</h2>
-    <p class="section-body" style="color: var(--text-light);">The pages above describe a field perspective on a strategic problem and an operationalized solution to it. They do not describe a commercial proposal. The conversation worth having is what dimensions of this would be most useful to examine together, in light of what Northwestern Mutual is already building and where the firm wants the business owner segment to be five and ten years from now.</p>
+  <!-- 8. THE STRUCTURAL POINT -->
+  <section class="pull-quote-section">
+    <div class="pull-quote-ornament">&mdash; &#10022; &mdash;</div>
+    <p class="pull-quote-text">
+      The methodology is the engine. The system is the rails. The home office services are the destinations the rails route to.
+    </p>
+    <div class="pull-quote-ornament">&mdash; &#10022; &mdash;</div>
+    <p class="pull-quote-after">
+      This operating model does not pull advisors away from Northwestern Mutual's home office services. It drives them deeper into those services by surfacing the planning conversations that create the demand. Every layer compensates Northwestern Mutual.
+    </p>
+  </section>
+
+  <!-- 9. INTEGRATION ARCHITECTURE -->
+  <section class="section section-white">
+    <div class="container">
+      <span class="section-label">The Integration Architecture &middot; Answering All Four Questions</span>
+      <h2 class="section-heading">Built to integrate with what NM already operates.</h2>
+      <p class="section-lead" style="text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+        This is a field perspective on what fully operationalized looks like. It is also a perspective developed inside Northwestern Mutual, by an advisor who has spent twenty years working alongside the home office systems and teams that already exist.
+      </p>
+      <p class="section-lead" style="text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+        Contnuum is not a competing platform. It is the business owner planning layer that sits on top of NM's existing infrastructure, pulls from every authoritative data source NM already operates, and routes intelligence back into those sources. It is fundamentally a connector and orchestrator for the segment, not a replacement for anything NM already runs.
+      </p>
+
+      <h3 style="font-family: var(--font-heading); font-size: 28px; color: var(--navy); margin-top: 60px; margin-bottom: 16px; text-align: center;">Five integration points, by name</h3>
+
+      <div class="integration-grid">
+        <div class="integration-card">
+          <h3 class="integration-card-title">With PX</h3>
+          <p class="integration-card-body">Bidirectional API. Contnuum pulls personal planning data from PX so the business planning side has the personal context. Contnuum pushes back to PX so personal planning stays current with what is happening on the business side. Solves: data entry duplication, formula and data integrity issues across both planning surfaces. Same advisor input, both surfaces in sync, no drift.</p>
+        </div>
+        <div class="integration-card">
+          <h3 class="integration-card-title">With AILA</h3>
+          <p class="integration-card-body">AILA captures the call data. Contnuum ingests AILA's transcripts to populate the planning analysis automatically. The advisor never re-keys what was discussed in the call. Discovery, valuation, exit, and legacy conversations all flow from the call into the planning workflow without manual entry.</p>
+        </div>
+        <div class="integration-card">
+          <h3 class="integration-card-title">With the NM Intranet AI GPT</h3>
+          <p class="integration-card-body">API integration. Contnuum pulls NM-approved client communication language and visual templates for reports. The intranet GPT feeds Contnuum's advisory chat with firm-approved language. Solves: compliance risk on advisor-generated communications, brand consistency across the field. Every recommendation is presented in language the firm has already vetted.</p>
+        </div>
+        <div class="integration-card">
+          <h3 class="integration-card-title">With NMGPT</h3>
+          <p class="integration-card-body">API integration on the personal planning side. Reduces data entry friction across both surfaces. The personal-planning artifacts NMGPT produces feed Contnuum's personal-side analysis; Contnuum's outputs flow back to NMGPT so the client-facing personal experience reflects the integrated picture.</p>
+        </div>
+        <div class="integration-card">
+          <h3 class="integration-card-title">With NM Connect</h3>
+          <p class="integration-card-body">The client-facing extension is built in the spirit of NM Connect, not as a replacement for it. Business owner clients get a specialized experience that brings the same coordinated, modern client interaction to the segment, where the planning is more complex and the deliverables are more numerous than the standard NM Connect experience accommodates.</p>
+        </div>
+      </div>
+
+      <p class="integration-closing">
+        A field-developed model only works inside Northwestern Mutual if it integrates with what Northwestern Mutual already operates. This is that integration thinking, named explicitly.
+      </p>
+    </div>
+  </section>
+
+  <!-- 10. FIVE COMPONENTS -->
+  <section class="section section-cream">
+    <div class="container">
+      <span class="section-label">Fully Operationalized &middot; Answering All Four Questions</span>
+      <h2 class="section-heading">Five components, one operating model.</h2>
+      <p class="section-lead" style="text-align: center; max-width: 900px; margin-left: auto; margin-right: auto;">
+        A methodology this rich, deployed across a field this large, requires more than a training program. It requires an integrated operating model. Five components, each addressing a piece of what makes the work hard and fragmented today. The methodology is what the advisor delivers. The other four are what allows the firm to deliver it the same way every time.
+      </p>
+
+      <div class="components-grid">
+        <div class="component-card">
+          <div class="component-num">Component 01</div>
+          <h3 class="component-title">The Methodology</h3>
+          <p class="component-body">The Seven Pillars of the Eternal Wealth Plan, validated and stress-tested in the field over twenty years. Documented, repeatable, the same shape for every client. The framework that allows one advisor to hold the whole picture together across two decades of relationship.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-num">Component 02</div>
+          <h3 class="component-title">The Client Journey</h3>
+          <p class="component-body">A defined experience that the advisor and the client move through together. Discovery, valuation, the multi-year roadmap, quarterly review, exit readiness, post-exit planning. The journey is the same for every client. That sameness is what makes it teachable, repeatable, and reliable across a field force.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-num">Component 03</div>
+          <h3 class="component-title">The Planning Experience</h3>
+          <p class="component-body">The deliverables the client sees. The Roadmap, the Eternal Wealth Snapshot, the Eternal Wealth Guardrails, the Five Value Drivers Assessment, the Exit Gap Calculation. Every artifact ties to a pillar. Every pillar ties to a question. The PX is what makes the methodology feel coordinated to the client, not just to the advisor.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-num">Component 04</div>
+          <h3 class="component-title">The Platform Substrate &middot; Contnuum</h3>
+          <p class="component-body">Contnuum is the technology that holds the analysis, the workflow, the documentation, and the audit trail. SOC2 compliant, FINRA and SEC audit-ready, single-tenant data sovereignty, explainable AI by design. Built to integrate with PX, AILA, the NM intranet GPT, NMGPT, and NM Connect through API, not to replace any of them.</p>
+        </div>
+        <div class="component-card">
+          <div class="component-num">Component 05</div>
+          <h3 class="component-title">The Client-Facing Extension</h3>
+          <p class="component-body">A client experience layer in the spirit of NM Connect, built specifically for business owner clients. The owner sees their plan, their valuation, their roadmap, and their progress in one place. The advisor sees what the client sees, plus the analytical depth that makes the conversation productive.</p>
+        </div>
+      </div>
+
+      <p class="components-closing-quote">
+        No single component is the answer. The answer is what happens when all five operate together.
+      </p>
+
+      <div class="components-closing-body">
+        <p>A methodology without a platform is a binder on a shelf. A platform without a methodology is software in search of a use case. A client journey without deliverables is theater. Deliverables without a client-facing extension are documents in a filing cabinet.</p>
+        <p>The five components have to be designed together, deployed together, and supported together. That integration is what is missing in the market today, and what makes operationalizing this work at scale a different problem from any individual component of it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. DIMENSIONS WORTH EXPLORING -->
+  <section class="dimensions-section">
+    <div class="dimensions-ornament">&mdash; &#10022; &mdash;</div>
+    <div class="dimensions-label">What this conversation could become</div>
+    <h2 class="dimensions-heading">The dimensions worth exploring together.</h2>
+    <p class="dimensions-body">
+      The pages above describe a field perspective on a strategic problem and an operationalized solution to it. They do not describe a commercial proposal. The conversation worth having is what dimensions of this would be most useful to examine together, in light of what Northwestern Mutual is already building and where the firm wants the business owner segment to be five and ten years from now.
+    </p>
+
     <div class="dimensions-list">
-      <p class="dimension-item">The integration with NM Connect and the firm's AI infrastructure.</p>
-      <div class="dimension-separator"></div>
-      <p class="dimension-item">The fit with Sophisticated Planning Strategies and the home office advanced planning teams.</p>
-      <div class="dimension-separator"></div>
-      <p class="dimension-item">The path from individual advisor adoption to ensemble-level deployment to field-wide capability.</p>
-      <div class="dimension-separator"></div>
-      <p class="dimension-item">The economics of asset retention through liquidity events and across generations.</p>
-      <div class="dimension-separator"></div>
-      <p class="dimension-item">The role of a field-developed methodology in a firm-wide answer to the advisor transition wave.</p>
+      <div class="dimension-item"><span class="dimension-item-num">01</span><span>The integration with PX, AILA, the intranet GPT, NMGPT, and NM Connect.</span></div>
+      <div class="dimension-item"><span class="dimension-item-num">02</span><span>The fit with Concierge Planning, Private Client Services, Fee-Based Planning, and the Sophisticated Planning Strategies team.</span></div>
+      <div class="dimension-item"><span class="dimension-item-num">03</span><span>The path from individual advisor adoption to ensemble-level deployment to field-wide capability.</span></div>
+      <div class="dimension-item"><span class="dimension-item-num">04</span><span>The home office economics of asset retention through liquidity events and across generations.</span></div>
+      <div class="dimension-item"><span class="dimension-item-num">05</span><span>The role of a field-developed methodology and operating system in a firm-wide answer to the advisor transition wave.</span></div>
     </div>
-    <div class="closing-deco">&mdash; &#10037; &mdash;</div>
-    <p class="closing-final">The right next step is the one this conversation surfaces.</p>
+
+    <p class="dimensions-closing">The right next step is the one this conversation surfaces.</p>
   </section>
 
-  <!-- SECTION 15: Footer -->
+  <!-- 12. FOOTER -->
   <section class="section footer">
     <span class="footer-brand">ETERNAL WEALTH PARTNERS &middot; ESTATE &amp; BUSINESS PLANNING</span>
     <div class="footer-divider-sm"></div>
@@ -1196,6 +1266,5 @@
     <p class="footer-disclaimer">This material is for informational purposes only and does not constitute financial, tax, or legal advice. All revenue figures are illustrative, based on industry data, and are not guarantees of future performance. Individual results vary based on effort, market conditions, and client circumstances.</p>
   </section>
 
-  <script>lucide.createIcons();</script>
 </body>
 </html>
