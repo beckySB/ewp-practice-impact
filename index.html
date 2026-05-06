@@ -983,6 +983,17 @@
 </head>
 <body>
 
+  <!-- ACCESS GATE -->
+  <div id="access-gate" style="position:fixed;inset:0;z-index:9999;background:#1B2E4A;display:flex;align-items:center;justify-content:center;flex-direction:column;">
+    <div style="text-align:center;max-width:360px;padding:40px;">
+      <p style="font-family:'Nunito',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;color:#C9A962;text-transform:uppercase;margin-bottom:24px;">Eternal Wealth Partners</p>
+      <h2 style="font-family:'Playfair Display',serif;font-size:28px;color:#FFFFFF;margin-bottom:8px;">Access Code</h2>
+      <p style="font-family:'Nunito',sans-serif;font-size:15px;color:#C8C0B8;margin-bottom:32px;">Enter the code to continue.</p>
+      <input id="access-input" type="text" inputmode="numeric" maxlength="4" autocomplete="off" style="width:160px;padding:12px 16px;font-family:'Nunito',sans-serif;font-size:24px;letter-spacing:8px;text-align:center;background:#243B5A;border:1px solid #C9A962;border-radius:8px;color:#FFFFFF;outline:none;" autofocus>
+      <p id="access-error" style="font-family:'Nunito',sans-serif;font-size:13px;color:#e05555;margin-top:12px;opacity:0;">Invalid code</p>
+    </div>
+  </div>
+
   <!-- 1. HERO -->
   <section class="hero">
     <div class="hero-content">
@@ -1509,5 +1520,25 @@
     <p class="footer-disclaimer">This material is for informational purposes only and does not constitute financial, tax, or legal advice. All revenue figures are illustrative, based on industry data, and are not guarantees of future performance. Individual results vary based on effort, market conditions, and client circumstances.</p>
   </section>
 
+  <script>
+    (function(){
+      var gate = document.getElementById('access-gate');
+      var input = document.getElementById('access-input');
+      var error = document.getElementById('access-error');
+      if(sessionStorage.getItem('ewp-access')==='1857'){gate.style.display='none';}
+      input.addEventListener('input',function(){
+        if(input.value==='1857'){
+          sessionStorage.setItem('ewp-access','1857');
+          gate.style.transition='opacity 0.3s';
+          gate.style.opacity='0';
+          setTimeout(function(){gate.style.display='none';},300);
+        } else if(input.value.length===4){
+          error.style.opacity='1';
+          input.value='';
+          setTimeout(function(){error.style.opacity='0';},2000);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
