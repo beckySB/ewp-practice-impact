@@ -246,7 +246,6 @@ ewp-practice-impact/
   - Subhead: "Twenty years in the field. A process-backed methodology for the most under-served, most lucrative segment we serve."
   - Supporting stats: $124T wealth transfer, 12M businesses exiting, 37% advisors retiring
   - Ornament: — ✦ —
-  - Tagline: "The pages that follow are the answer."
 - **Copy guidance:** The Hero establishes that what follows is a field perspective on an institutional problem — not a sales pitch and not personal advocacy. The phrase "process-backed methodology" lands the deck's dominant operational frame from the top.
 
 ### 3. Four Questions
@@ -290,9 +289,9 @@ ewp-practice-impact/
   - **Paragraph 3:** Names three dimensions of data sovereignty risk: regulatory responsibility, commercial asset, strategic moat.
   - **Paragraph 4 (competitive context):** "The competitive context sharpens this. The firms actively building their front doors around the business owner segment — the larger independent RIAs, the major family office platforms, the PE-backed wealth aggregators — are not constrained by legacy planning infrastructure. They are building from the segment outward. Northwestern Mutual enters this decade with deeper planning credentials, longer client relationships, and more home office substance than any of them. What it does not yet have is the field-side operating layer that lets those advantages compete at the moment of work."
 - **Three-card grid** (each card has centered gold — ✦ — ornament above title, navy bold title, italic body):
-  - **The piece that exists.** Valuation is the one dimension where the firm has begun. The infrastructure was licensed from outside, which is itself the acknowledgment that this kind of work needs infrastructure built specifically for it.
+  - **The piece that exists.** The firm has built and licensed infrastructure for parts of the financial mechanics of business owner planning. Each piece addresses a slice of the work. None of them run together, and none of them define the larger discipline they sit inside.
   - **The work that runs without a home.** Values work. Cash flow modeling. Risk and investment audit. Tax strategy. Exit planning. Legacy work. The dimensions that make up a business owner's plan happen in the field today, in spreadsheets, in third-party tools, in the advisor's experience. No firm-owned architecture.
-  - **The environment that does not exist.** A business owner plan is the integration of those dimensions, not the sum of them. There is no single environment where the firm runs them together for a client. The plan lives in fragments across tools the firm does not own.
+  - **The environment that does not exist.** A business owner plan is the integration of those dimensions, not the sum of them. There is no single environment where the firm runs them together for a client. The pieces that exist do not connect. The plan lives in fragments.
 - **Closing paragraph:** Operating-layer language — "who builds it, and whether the operating layer that results is built deliberately for the firm Northwestern Mutual has spent decades becoming."
 - **Pull quote:** "The market is moving. The question is what version of this story Northwestern Mutual writes." (centered, gold ornaments)
 - **Copy guidance:** This section surfaces three of the deck's strategic vulnerabilities in sequence — the capacity asymmetry (firm has invested in the credential base but not the operating layer), the data sovereignty risk (workflow and IP exposure across fragmented tools), and the competitive squeeze (segment-native competitors building from the business owner segment outward). The closing line of Paragraph 2 carries the NM AI strategy alignment work — model-agnostic, integration-first, composable across workflows — using NM's own published vocabulary without explicitly quoting their framework. Paragraph 4 reframes NM's incumbency as advantage, names the competitive set categorically without indicting any specific competitor, and lands the gap thesis in twenty-six words. The phrase "at the moment of work" distinguishes infrastructure that exists from infrastructure that is usable in real-time case execution. The phrase "building from the segment outward" captures the structural asymmetry between firms built broad and firms built around the business owner specialty from inception. The pull quote leaves the strategic problem in the reader's hands without prescribing the solution.
@@ -612,4 +611,9 @@ b401173 fix: institutional capability reframe across deployed copy (12M card, pi
 e21dc2a fix(market-reality): rewrite three cards with institutional gap framing
 fa04cba feat(market-reality): add gold dash-diamond-dash ornament to three cards
 d8d7a9e fix: center gold ornaments on Market Reality cards
+641a20a docs: update build doc with Market Reality card reframe and full commit history
+--- Hero and card copy refinements ---
+7bf225e fix(hero): remove 'The pages that follow are the answer' tagline
+4eaef2c fix(market-reality): rewrite 'The piece that exists' card body
+bbeeb24 fix(market-reality): rewrite 'The environment that does not exist' card body
 ```
