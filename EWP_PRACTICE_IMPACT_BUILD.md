@@ -4,6 +4,7 @@
 **Repository:** https://github.com/beckySB/ewp-practice-impact
 **Deployment:** Railway (auto-deploy from `main` branch)
 **Access Gate:** Code `1857` required before viewing content (sessionStorage-persisted)
+**Last updated:** May 15, 2026
 
 ---
 
@@ -110,8 +111,6 @@ The $10T and $5T numbers serve different jobs and must not be presented as if th
 The gap between the two is the more powerful story and the direct setup for the methodology's reason to exist. **Roughly half of boomer business value never reaches a buyer.** Of the approximately 510,000 small and medium-sized US businesses that exited the market in 2022, 92% exited via closure, only 5% via sale, and 3% via transfer (McKinsey Institute for Economic Mobility, 2026). Transferability is the difference between a transition and a payout. The process-backed methodology exists to close that gap by making businesses transactable.
 
 ### The five strategic vulnerabilities the document surfaces
-
-These are the conditions the deck names (directly or indirectly) so the reader recognizes the strategic problem as their own.
 
 1. **The capacity cliff in sophisticated planning.** The most complex planning is delivered by the most tenured advisors, who are themselves retiring into the same wave they were built to serve.
 2. **The book transition problem.** Sophisticated business owner clients churn at higher rates during advisor handoffs than mass affluent clients. AUM, premium, and multi-generational relationships are at risk in every transition event.
@@ -224,7 +223,7 @@ ewp-practice-impact/
 
 ---
 
-## Page Sections (11 Total)
+## Deployed Page Sections (12 Total)
 
 ### 1. Access Gate
 
@@ -244,8 +243,8 @@ ewp-practice-impact/
   - Gold-bordered badge: "Eternal Wealth Partners - A Field Perspective for Northwestern Mutual Home Office"
   - Headline: "Where the Business Owner Plan Lives"
   - Subhead: "Twenty years in the field. A process-backed methodology for the most under-served, most lucrative segment we serve."
-  - Supporting stats: $124T wealth transfer, 12M businesses exiting, 37% advisors retiring
-  - Ornament: — ✦ —
+  - Three stats: $124T wealth transfer, 12M businesses exiting, 37% advisors retiring
+  - Closing ornament: — ✦ —
 - **Copy guidance:** The Hero establishes that what follows is a field perspective on an institutional problem — not a sales pitch and not personal advocacy. The phrase "process-backed methodology" lands the deck's dominant operational frame from the top.
 
 ### 3. Four Questions
@@ -258,12 +257,7 @@ ewp-practice-impact/
   - **Q03:** When the firm's most complex planning work is happening in spreadsheets and external tools, who owns the data, the workflow, and the firm's intellectual property in the segment?
   - **Q04:** What does the operating layer for Northwestern Mutual's business owner planning look like?
 - **Closing:** "The pages that follow answer each one in turn."
-- **Copy guidance:** The Four Questions structure the deck as a response to home-office concerns the reader already holds, each mapped to a specific institutional reader:
-  - **Q01** is the executive-leverage frame. Compound versus leak is P&L-steward language. The question honors what the firm has built and reframes the deck from outside critique to inside leverage analysis. Sets up the operating-layer thesis.
-  - **Q02** is the field-readiness question. Two simultaneous demographic loads against a single bench, named as a single structural problem. Loads the 37% statistic directly into the question so it cannot be skimmed past. Speaks to field leadership in field-leadership terms.
-  - **Q03** is the data sovereignty question. Hits three institutional anxieties in one sentence — data ownership, workflow ownership, IP ownership. The implicit answer being uncomfortable is the mechanism. "Fragmented tools" names the actual problem (fragmentation across the field) without indicting any specific partner tool the firm currently uses.
-  - **Q04** is the operating-layer question stated plainly. Closes at "what does it look like" — the firm answers the question on its own terms. The deployment-and-who-builds-it question is intentionally left out; that question belongs to the firm's internal process, not to this document.
-- **Layout note:** The original section layout was sized for short question fragments. These longer, more sophisticated questions may require layout adjustment at implementation — smaller decorative `?` marks, increased vertical space per row, or a shift to numbered-only treatment. Worth flagging to the implementer.
+- **Copy guidance:** The Four Questions structure the deck as a response to home-office concerns the reader already holds. Q01 is the executive-leverage frame (compound vs leak). Q02 is the field-readiness question (two demographic loads, one bench). Q03 is the data sovereignty question (three institutional anxieties in one sentence). Q04 is the operating-layer question stated plainly — the firm answers it on its own terms.
 
 ### 4. Market in Transition
 
@@ -271,139 +265,115 @@ ewp-practice-impact/
 - **Label:** THE MARKET IN TRANSITION - ANSWERING QUESTIONS 01 AND 04
 - **Heading:** "The supply curve and the demand curve are crossing." (italic)
 - **Lead paragraph:** Three demographic forces converging inside the next decade.
-- **Content:** Three stat cards
-  - **$124T** — Wealth in Transfer: through 2048, 81% from Boomers, half from 2% of population (Cerulli)
-  - **12M** — Businesses Changing Hands: $10T in motion. Only $5T transacts. McKinsey projects roughly half of boomer business value never reaches a buyer. 92% of small business market exits today occur through closure, not sale (McKinsey Institute for Economic Mobility, *The Great Ownership Transfer*, 2026). Transferability is the difference between a transition and a payout.
+- **Three stat cards:**
+  - **$124T** — Wealth in Transfer: through 2048, 81% from Boomers, half from 2% of population
+  - **12M** — Businesses Changing Hands: $10T in motion, McKinsey projects $5T come to market. 92% of small business exits occur via closure, not sale (McKinsey Institute for Economic Mobility, 2026). Transferability is the difference between a transition and a payout.
   - **37%** — Advisors Transitioning: $10.4T in client assets, 26% unsure of succession plan (Cerulli)
 - **Closing:** "The convergence creates the opportunity. The fragmentation of the work prevents the field from capturing it."
-- **Copy guidance:** The 12M card carries the deck's gap thesis. The contrast headline — *$10T in motion. Only $5T transacts.* — is the lede. The 92% closure stat earns the methodology its reason to exist. The transferability line connects the macro problem directly to what the process-backed methodology does. This is the slide that justifies every subsequent section. Avoid framing this section as opportunity celebration; frame it as a structural problem the firm has a narrow window to solve.
+- **Copy guidance:** The 12M card carries the deck's gap thesis. The 92% closure stat earns the methodology its reason to exist. Frame as structural problem, not opportunity celebration.
 
 ### 5. Market Reality
 
 - **Background:** White
 - **Label:** WHAT IS HAPPENING IN THE FIELD RIGHT NOW
 - **Heading:** "The build is happening with or without us."
-- **Content:** Four body paragraphs establishing the gap, timing, data sovereignty risk, and competitive context:
-  - **Paragraph 1:** Names the 1,498 CFP base (most in the IBD channel, sourced to NM August 14, 2024 press release). Frames "the talent and the credential are there. The operating layer is not."
-  - **Paragraph 2:** Names the firm's gap acknowledgment (white-labeled valuation platform, actively evaluating next-gen tooling) without naming proprietary internal tools. Lands "the next four years are the window." Closes with: *"The right operating layer is one the firm can shape, integrate, and over time make its own — model-agnostic by design, integration-first by architecture, and built to compose across the workflows the firm already runs."*
-  - **Paragraph 3:** Names three dimensions of data sovereignty risk: regulatory responsibility, commercial asset, strategic moat.
-  - **Paragraph 4 (competitive context):** "The competitive context sharpens this. The firms actively building their front doors around the business owner segment — the larger independent RIAs, the major family office platforms, the PE-backed wealth aggregators — are not constrained by legacy planning infrastructure. They are building from the segment outward. Northwestern Mutual enters this decade with deeper planning credentials, longer client relationships, and more home office substance than any of them. What it does not yet have is the field-side operating layer that lets those advantages compete at the moment of work."
-- **Three-card grid** (each card has centered gold — ✦ — ornament above title, navy bold title, italic body):
+- **Four body paragraphs:**
+  - **Paragraph 1:** Names the 1,498 CFP base (most in the IBD channel, sourced to NM August 14, 2024 press release). "The talent and the credential are there. The operating layer is not."
+  - **Paragraph 2:** Names the firm's gap acknowledgment (white-labeled valuation platform, evaluating next-gen tooling). "The next four years are the window." Closes with model-agnostic, integration-first, compose-across-workflows language.
+  - **Paragraph 3:** Three dimensions of data sovereignty risk: regulatory responsibility, commercial asset, strategic moat.
+  - **Paragraph 4:** Competitive context — RIAs, family office platforms, PE-backed wealth aggregators building from the segment outward. NM has deeper credentials but not the field-side operating layer.
+- **Three-card grid** (each card has centered gold — ✦ — ornament above navy bold title, italic body):
   - **The piece that exists.** The firm has built and licensed infrastructure for parts of the financial mechanics of business owner planning. Each piece addresses a slice of the work. None of them run together, and none of them define the larger discipline they sit inside.
   - **The work that runs without a home.** Values work. Cash flow modeling. Risk and investment audit. Tax strategy. Exit planning. Legacy work. The dimensions that make up a business owner's plan happen in the field today, in spreadsheets, in third-party tools, in the advisor's experience. No firm-owned architecture.
   - **The environment that does not exist.** A business owner plan is the integration of those dimensions, not the sum of them. There is no single environment where the firm runs them together for a client. The pieces that exist do not connect. The plan lives in fragments.
-- **Closing paragraph:** Operating-layer language — "who builds it, and whether the operating layer that results is built deliberately for the firm Northwestern Mutual has spent decades becoming."
+- **Closing paragraph:** "who builds it, and whether the operating layer that results is built deliberately for the firm Northwestern Mutual has spent decades becoming."
 - **Pull quote:** "The market is moving. The question is what version of this story Northwestern Mutual writes." (centered, gold ornaments)
-- **Copy guidance:** This section surfaces three of the deck's strategic vulnerabilities in sequence — the capacity asymmetry (firm has invested in the credential base but not the operating layer), the data sovereignty risk (workflow and IP exposure across fragmented tools), and the competitive squeeze (segment-native competitors building from the business owner segment outward). The closing line of Paragraph 2 carries the NM AI strategy alignment work — model-agnostic, integration-first, composable across workflows — using NM's own published vocabulary without explicitly quoting their framework. Paragraph 4 reframes NM's incumbency as advantage, names the competitive set categorically without indicting any specific competitor, and lands the gap thesis in twenty-six words. The phrase "at the moment of work" distinguishes infrastructure that exists from infrastructure that is usable in real-time case execution. The phrase "building from the segment outward" captures the structural asymmetry between firms built broad and firms built around the business owner specialty from inception. The pull quote leaves the strategic problem in the reader's hands without prescribing the solution.
+- **Copy guidance:** This section surfaces three strategic vulnerabilities in sequence — capacity asymmetry, data sovereignty risk, and competitive squeeze. Paragraph 2's closing carries NM AI strategy alignment vocabulary. Paragraph 4 names the competitive set categorically. The three cards frame the gap as a progression: what exists is partial, what runs is homeless, what is needed does not exist. The pull quote leaves the strategic problem in the reader's hands.
 
 ### 6. Quote
 
 - **Background:** Navy (`#1B2E4A`)
-- **Content:** Decorative open/close quotes with italic Playfair Display text
 - **Quote:** "The supply of advisors who can serve sophisticated business owner planning is shrinking at exactly the moment demand is reaching record highs."
 - **Attribution:** "A field perspective on a structural problem."
-- **Copy guidance:** The quote crystallizes the capacity asymmetry thesis in one sentence. The attribution is generic ("a field perspective") rather than personal, reinforcing the institutional frame.
+- **Copy guidance:** Crystallizes the capacity asymmetry thesis. Attribution is generic, reinforcing institutional frame.
 
 ### 7. The Spine
 
 - **Background:** Cream
 - **Label:** THE SPINE OF THIS DOCUMENT
-- **Heading:** "The Seven Pillars are the process-backed methodology." (56px Playfair Display)
-- **Subhead (thesis):** "Contnuum is the operating system that lets a firm built for advanced planning actually deliver it at scale." (30px Playfair Display italic, teal-deep)
-- **Body paragraphs (2):**
-  - Paragraph 1: Names NM's investment posture — CERTIFIED FINANCIAL PLANNER base, Sophisticated Planning Strategies team, Estate and Business Planning Specialists, Schools at home office. "The firm has built itself to be a sophisticated planning firm."
-  - Paragraph 2: Names the missing operating layer and defines Contnuum's role. "The Seven Pillars are the process-backed methodology that delivers sophisticated business owner planning. Contnuum is the operating system that runs the process across the field force, designed model-agnostic and integration-ready to sit inside the firm's existing AI architecture."
+- **Heading:** "The Seven Pillars are the process-backed methodology."
+- **Subhead:** "Contnuum is the operating system that lets a firm built for advanced planning actually deliver it at scale."
+- **Body paragraphs:**
+  - Paragraph 1: Names NM's investment posture — CFP base, Sophisticated Planning Strategies, Estate and Business Planning Specialists, Schools. "The firm has built itself to be a sophisticated planning firm."
+  - Paragraph 2: "The Seven Pillars are the process-backed methodology that delivers sophisticated business owner planning. Contnuum is the operating system that runs the process across the field force, designed model-agnostic and integration-ready to sit inside the firm's existing AI architecture."
 - **Three callouts** (teal-bordered, light-teal background):
-  - **What the system does:** Three jobs — deepens client relationship, drives plan implementation, makes team's job easier
-  - **Built for the firm's compliance posture:** SOC2 architecture, FINRA and SEC audit-ready by design, single-tenant data sovereignty, explainable and model-agnostic AI, complete audit trail. Mature enough to scale safely and responsibly across the field.
-  - **Why one workspace matters:** "One process. One workspace. The math reconciles across pillars." — formula integrity argument, PX integration, "The plan holds up. The numbers hold up across pillars."
-- **Copy guidance:** Contnuum is referenced as an operating-system concept that sits inside the firm's architecture, not as an external commercial product. The Spine establishes that the firm's existing investment in sophisticated planning infrastructure is the precondition for the process-backed methodology working at scale, and that the missing piece is the operating layer that ties it all together. The phrases "model-agnostic and integration-ready" (paragraph 2) and "explainable and model-agnostic AI" and "mature enough to scale safely and responsibly across the field" (compliance callout) carry the NM AI strategy alignment work — using the firm's own published vocabulary so the framing reads as native to the conversation NM is already having internally. No commercial framing.
+  - **What the system does:** Deepens client relationship, drives plan implementation, makes team's job easier
+  - **Built for the firm's compliance posture:** SOC2, FINRA/SEC audit-ready, single-tenant data sovereignty, explainable and model-agnostic AI, complete audit trail. Mature enough to scale safely and responsibly across the field.
+  - **Why one workspace matters:** "One process. One workspace. The math reconciles across pillars." Formula integrity argument, PX integration. "The numbers hold up across pillars."
+- **Copy guidance:** Contnuum is an operating-system concept inside the firm's architecture, not an external product. "Model-agnostic and integration-ready" and "scale safely and responsibly across the field" carry NM AI strategy alignment.
 
 ### 8. Seven Pillars with Flip Cards
 
 - **Background:** White
 - **Label:** THE PROCESS-BACKED METHODOLOGY - ANSWERING ALL FOUR QUESTIONS
 - **Heading:** "Seven Pillars, Seven Flip Panels."
-- **Axis display:** BUSINESS ← YOU → FAMILY (centered, teal, uppercase)
-- **Thesis:** "The Seven Pillars are the process-backed methodology. Contnuum is the workflow that lets a great wealth advisor deliver them." (centered, 32px Playfair Display)
-- **Framing paragraphs (centered):**
-  - NM advisors are exceptional at relationships; the process and Contnuum remove the demand to operate as CPAs, attorneys, analysts
-  - "Each card flips to show what changes for the advisor and the team when the workflow runs."
+- **Axis display:** BUSINESS ← YOU → FAMILY (centered, teal)
+- **Thesis:** "The Seven Pillars are the process-backed methodology. Contnuum is the workflow that lets a great wealth advisor deliver them."
+- **Framing:** The process and Contnuum remove the demand for advisors to operate as CPAs, attorneys, analysts.
+- **Flip Card System:** CSS 3D transforms (`perspective: 1400px`, `rotateY(180deg)`, `backface-visibility: hidden`), toggle via `onclick`
 
-**Flip Card System:**
-- CSS 3D transforms: `perspective: 1400px`, `rotateY(180deg)`, `backface-visibility: hidden`
-- Toggle via `onclick` → `.is-flipped` class
-- Front: cream-light background, navy left border
-- Back: light-teal background, gold left border
+| # | Pillar | Front | Back Pattern |
+|---|--------|-------|-------------|
+| 01 | Values & Vision | EWP Discovery Sequence, Growth/Liquidity/Control | Gap → Workflow → "The advisor stays a wealth advisor." |
+| 02 | Cash Flow & Balance Sheet | Eternal Wealth Snapshot, Guardrails | Gap → Workflow → Sustainability thesis |
+| 03 | Risk & Investment Audit | Buy-Sell, key person, executive carve-out | Gap → Workflow → Depth thesis |
+| 04 | Lifetime Tax-Efficient Strategy | RSU, ISO, NSO, ESOP, 83B, AMT | Gap → Workflow → Tax efficiency thesis |
+| 05 | Business Valuation | Valuation, Transferability Score, Exit Gap | Gap → Workflow → Analytical rigor thesis |
+| 06 | Exit & Transition Planning | Exit Readiness, Multi-Year Roadmap, 76% regret (EPI 2023) | Gap → Workflow → Runway thesis |
+| 07 | Legacy & Estate Planning | Wills, Trusts, Generation Skipping, Gifting | Gap → Workflow → Coherence thesis |
 
-| # | Pillar | Front Summary | Back Structure |
-|---|--------|---------------|----------------|
-| 01 | Values & Vision | The EWP Discovery Sequence, vision statements, Growth/Liquidity/Control ranking | Gap: structured discovery needed. Workflow: guided path captures priorities. Thesis: conversation that anchors every later pillar actually happens. |
-| 02 | Cash Flow & Balance Sheet | Eternal Wealth Snapshot, Guardrails, multi-year profitability trend | Gap: cash flow as living forecast, not snapshot. Workflow: living model with recommendations as inputs. Thesis: plan gets the sustainability it should have had. |
-| 03 | Risk & Investment Audit | Buy-Sell, key person, executive carve-out, portfolio alignment | Gap: reading legal documents, modeling protection. Workflow: reads agreement, calculates gap, pre-populates recommendation. Thesis: case gets the depth it should have had. |
-| 04 | Lifetime Tax-Efficient Strategy | RSU, ISO, NSO, ESOP, 83B, AMT, entity optimization | Gap: tracking tax events and planning calendar. Workflow: tracks events, surfaces implications. Thesis: plan gets the multi-year tax efficiency it should have had. |
-| 05 | Business Valuation | Business Valuation, Transferability Score, Exit Gap, Value Acceleration | Gap: running valuation engine, scoring drivers. Workflow: runs assessment, calculates scores, produces roadmap. Thesis: case gets the analytical rigor it should have had. |
-| 06 | Exit & Transition Planning | Exit Readiness, Strategy Options, Multi-Year Roadmap, Post-Exit Plan. 76% post-exit regret rate (EPI, 2023). | Gap: multi-year exit roadmap sequencing. Workflow: builds roadmap backward from desired exit date, sequences milestones. Advisor walks owner through path, and the investment and legacy plan for the assets. Thesis: exit gets the runway it should have had. |
-| 07 | Legacy & Estate Planning | Wills, Trusts, Asset Ownership, Generation Skipping, Charitable Giving, Gifting Strategy | Gap: generation-skipping analysis, gifting strategy, charitable structures. Advisors are not estate attorneys. Workflow: generates estate diagram, models gifting, routes to Concierge Planning. Thesis: legacy gets the coherence it should have had. |
-
-- **Back card pattern:** Gap statement (bold, what is hard) → Workflow description (what Contnuum does) → Thesis (italic, "The advisor stays a wealth advisor. The [domain] gets the [quality] it should have had.")
-- **Copy guidance:** Each pillar is presented as a named operating component with a defined deliverable, not as a description of what the practitioner personally does well. Front summaries name *frameworks and artifacts*. Back panels describe *what changes for the advisor and the team when the workflow runs* — institutional language, not personal practice language. The pillar architecture is the methodology catalog; the flip mechanic is the systematization proof. Pillar 05 language stays inside wealth and exit vocabulary (Business Valuation, Transferability Score, Exit Gap, Value Acceleration). Operational-diagnostic vocabulary does not appear here.
+- **Back card pattern:** Gap statement (bold) → Workflow description → Thesis (italic: "The advisor stays a wealth advisor. The [domain] gets the [quality] it should have had.")
 
 ### 9. Revenue and Retention
 
 - **Background:** Cream
 - **Label:** ANSWERING QUESTION 01 - WHY THIS COMPOUNDS
 - **Heading:** "Why business owner relationships compound where personal planning relationships do not."
-- **Lead paragraph:** "The work that compounds for clients also compounds for the firm."
-- **Comparison table:** Personal Planning vs. Business Owner Relationship across 6 dimensions:
-
-| Dimension | Personal Planning | Business Owner |
-|-----------|------------------|----------------|
-| First-year insurance premium | $2K to $5K | $30K to $150K+ |
-| Insurance sale events over 20 years | 1 to 2 | 4 to 7 |
-| Pre-event AUM accumulation | $500K to $2M | $1M to $10M+ |
-| The liquidity event | None (gradual drawdown) | $5M to $50M+ deposited |
-| Post-event AUM | Decumulating | Compounding into next generation |
-| Multi-generational continuation | Sometimes | Almost always |
-
-- **Retention argument:** "Retention runs in both directions." — structural stickiness for both client and advisor
-- **Pull quote:** "Multiplied across the field force, the segment economics are an order of magnitude larger than any single practice." (centered, gold ornaments)
-- **Copy guidance:** This section translates the process-backed methodology into the language home office economics actually buys — production per advisor, retention impact, override impact, and the compounding nature of business owner relationships across generations. The comparison table speaks in the language of activity standards and production lift, not practitioner skill. The pull quote signals scale without proposing scale architecture; it leaves the deployment question with the reader.
+- **Lead:** "The work that compounds for clients also compounds for the firm."
+- **Comparison table:** Personal Planning vs. Business Owner across 6 dimensions (insurance premium, sale events, AUM, liquidity event, post-event AUM, multi-generational continuation)
+- **Retention:** "Retention runs in both directions." — structural stickiness for both client and advisor
+- **Pull quote:** "Multiplied across the field force, the segment economics are an order of magnitude larger than any single practice."
 
 ### 10. Five Components
 
 - **Background:** Cream
 - **Label:** FULLY OPERATIONALIZED - ANSWERING ALL FOUR QUESTIONS
 - **Heading:** "Five components, one operating model."
-- **Lead paragraph:** A process-backed methodology requires an integrated operating model, not just a training program.
-- **Five component cards** (gold top border):
+- **Lead:** A process-backed methodology requires an integrated operating model, not just a training program.
+- **Five cards:**
 
-| # | Component | Description |
-|---|-----------|-------------|
-| 01 | The Process-Backed Methodology | Seven Pillars, validated and stress-tested across cases. Documented, repeatable, same shape for every client. |
-| 02 | The Client Journey | Discovery, valuation, multi-year roadmap, quarterly review, exit readiness, post-exit. Same for every client. |
-| 03 | The Planning Experience | Deliverables: The Eternal Wealth Plan, Eternal Wealth Snapshot, Guardrails, Transferability Score, Exit Gap Calculation. Every artifact ties to a pillar. |
+| # | Component | Deployed Description |
+|---|-----------|---------------------|
+| 01 | The Process-Backed Methodology | Seven Pillars, validated and stress-tested across cases. Documented, repeatable, the same shape for every client. |
+| 02 | The Client Journey | Discovery through post-exit planning. Same for every client. Teachable, repeatable, reliable across a field force. |
+| 03 | The Planning Experience | Deliverables: Eternal Wealth Plan, Snapshot, Guardrails, Transferability Score, Exit Gap Calculation. Every artifact ties to a pillar. |
 | 04 | The Platform Substrate - Contnuum | SOC2, FINRA/SEC audit-ready, single-tenant, explainable AI. Built model-agnostic and integration-first — designed to integrate with PX, AILA, LinknetGPT, NMGPT, and NM Connect through API, and to compose with whatever AI models and third-party tools the firm chooses across advisor workflows, not to replace any of them. |
 | 05 | The Client-Facing Extension | In the spirit of NM Connect, for business owner clients. Owner sees plan, valuation, roadmap, progress. |
 
-- **Closing quote:** "No single component is the answer. The answer is what happens when all five operate together."
-- **Closing body:** A methodology without a platform is a binder; a platform without a methodology is software in search of a use case. Five components must be designed, deployed, and supported together.
-- **Copy guidance:** The Five Components frame demonstrates that the operating model exists as a coherent whole. Contnuum (Component 04) is described in language that directly mirrors NM's published model-agnostic, integration-first AI strategy — composing across the firm's existing tool architecture rather than replacing it. The four named methodology components (Discovery Sequence, Guardrails, Lifetime Tax-Efficient Strategy, Eternal Wealth Plan) are reflected here as the deliverables that comprise Component 03. The fifth methodology component (a formal transferability diagnostic) is in active development and not named in this catalog; if asked, the answer is that transferability is a core analytical lens within the process-backed methodology and the formal scored diagnostic is in development as the next component.
+- **Closing:** "No single component is the answer. The answer is what happens when all five operate together."
 
 ### 11. Dimensions Worth a Deeper Look (Close)
 
 - **Background:** Navy with marble texture overlay (`closing-bg.png`)
 - **Ornament:** — ✦ —
 - **Label:** WHAT THIS CONVERSATION COULD BECOME
-- **Heading:** "The dimensions worth a deeper look." (52px Playfair Display italic)
-- **Intro paragraph:** Field perspective on a strategic problem and operationalized solution; not a commercial proposal.
-- **Three numbered dimensions:**
+- **Heading:** "The dimensions worth a deeper look."
+- **Three dimensions:**
   1. **The integration architecture.** How a purpose-built workspace sits alongside what NM has already built, model-agnostic by design and composable across the firm's existing AI workflows.
-  2. **The field readiness path.** How the process-backed methodology and Contnuum reach the advisors who serve this segment, keeping the wealth advisor operating as a wealth advisor.
+  2. **The field readiness path.** How the methodology and Contnuum reach the advisors who serve this segment, keeping the wealth advisor operating as a wealth advisor.
   3. **The home office economics.** What the segment looks like at scale, how NM's infrastructure investment compounds when the field can use it consistently.
-- **Soft-close paragraph:** "The right next step is the one this conversation surfaces. I am happy to follow up in whatever form would be most useful: a longer working session, a written response to specific questions, or time with a smaller group to go deeper on any of the three dimensions. The right rhythm is the one that fits Northwestern Mutual's process."
-- **Final line:** "The market is moving. The conversation worth having is what Northwestern Mutual chooses to do about it." (gold, italic)
-- **Copy guidance:** The Close is the deck's pull mechanism. It names three dimensions where the conversation could go deeper without proposing how the firm should engage. Dimension 1 carries the model-agnostic, composable language that aligns with NM's published AI strategy. The deck ends on a question the firm chooses to answer — or not — on its own terms. No commercial framing, no proposal language, no implied next step beyond the firm's own process.
+- **Soft close:** "The right rhythm is the one that fits Northwestern Mutual's process."
+- **Final line:** "The market is moving. The conversation worth having is what Northwestern Mutual chooses to do about it."
 
 ### 12. Footer
 
@@ -489,7 +459,6 @@ ewp-practice-impact/
 
 ## Voice Discipline (Deployed Copy)
 
-- No em-dashes in body copy (only decorative `&mdash;` in ornaments)
 - No AI register (no rhythmic triplets, no academic hedging, no breathy adverbs)
 - No proprietary NM internal tool names beyond those already referenced through public-facing APIs (no "BPA", no "BizEquity")
 - No personal first names in deployed copy
@@ -514,21 +483,19 @@ ewp-practice-impact/
 
 **Dependency chain:** Continuum deliverable spec → Transferability diagnostic design → EWP Discovery Sequence revision
 
-**Working principle:** EWP intake forms are currently optimized for human-advisor-driven discovery. Continuum will require structured, machine-readable, consistently-scored inputs. The intake redesign and the diagnostic build are the same project, executed together, not separately.
-
 **Verbal answer if asked in the room:** *Transferability is a core analytical lens within the process-backed methodology. The formal scored diagnostic is in active development as the next component, designed to integrate with the existing discovery architecture.*
 
 ### NM AI Strategy Alignment
 
 **Status:** Active. Vocabulary alignment baked into the deck; framework reference held for the meeting.
 
-**Context:** NM published *"A sharper buy vs build AI approach targets four priorities"* on May 12, 2026, the day before initial home office conversations. The firm's stated posture is buy/build/integrate model-agnostic, with four specific AI priorities aligned to advisor workflow productivity. Northwestern Mutual Future Ventures has committed an additional $150M to fintech innovation.
+**Context:** NM published *"A sharper buy vs build AI approach targets four priorities"* on May 12, 2026. The firm's stated posture is buy/build/integrate model-agnostic, with four specific AI priorities aligned to advisor workflow productivity. Northwestern Mutual Future Ventures has committed an additional $150M to fintech innovation.
 
 **Deck handling:** Vocabulary integrated (model-agnostic, integration-first, scale safely across the field, compose across workflows) without explicit reference to NM's stated framework. The deck reads as native to the conversation NM is already having internally.
 
-**Meeting handling:** The buy-vs-build question is not preempted. When it surfaces, the hybrid answer is ready: methodology becomes NM IP, platform integrates as model-agnostic third-party tool the firm can shape, white-label, or eventually internalize. The $150M Future Ventures commitment is acknowledged only if commercial structure is asked about directly, and only as one of several possible structures.
+**Meeting handling:** The buy-vs-build question is not preempted. When it surfaces, the hybrid answer is ready: methodology becomes NM IP, platform integrates as model-agnostic third-party tool the firm can shape, white-label, or eventually internalize.
 
-**Optional opening line for first ten minutes of the meeting:** *"I saw the Field Focus episode and the buy-vs-build piece this week. A lot of what I want to share today actually fits inside that frame, which felt like good timing."*
+**Optional opening line:** *"I saw the Field Focus episode and the buy-vs-build piece this week. A lot of what I want to share today actually fits inside that frame, which felt like good timing."*
 
 ### NM Four AI Priorities — Direct Mapping (Conversation Reference)
 
@@ -550,7 +517,7 @@ This mapping is held for the conversation. It is not displayed in the deck.
 | Wealth in transfer | $124T through 2048 | Cerulli Associates |
 | Boomer-owned businesses exiting | 12M | Industry standard |
 | Business assets in motion (gross pool) | ~$10T | Industry standard |
-| Boomer businesses projected to transact | $5T over next decade | McKinsey Institute for Economic Mobility, *The Great Ownership Transfer: A New Era of Business Stewardship*, February 2026 |
+| Boomer businesses projected to transact | $5T over next decade | McKinsey Institute for Economic Mobility, *The Great Ownership Transfer*, February 2026 |
 | Small business exits by closure (2022) | 92% (5% sale, 3% transfer; ~510,000 total exits) | McKinsey Institute for Economic Mobility, *The Great Ownership Transfer*, February 2026 |
 | Advisors retiring | 37% of workforce | Industry standard |
 | Advisor-controlled assets | $10.4T | Cerulli Associates |
@@ -569,7 +536,6 @@ b391029 Add Lucide icons throughout all card sections
 5f9884e Add background textures for hero and closing sections
 5ae8358 Rebuild site from NM Home Office revision spec
 cd3d95a feat: NM Build Spec revision with flip cards, integration architecture, and Contnuum naming
-29d5b45 chore: add playwright-cli and screenshots to gitignore
 --- v6 spec execution (branched from cd3d95a, merged to main) ---
 1360d37 feat(market-reality): insert Market Reality section
 c41ca6e feat(spine): add compliance posture and formula integrity callouts
@@ -607,13 +573,13 @@ b401173 fix: institutional capability reframe across deployed copy (12M card, pi
 --- Process-backed methodology shift + NM AI strategy alignment ---
 015f6c2 refactor: shift dominant phrase to process-backed methodology with NM AI strategy alignment
 132600f docs: update build doc — mark process-backed methodology changes as deployed
---- Market Reality card reframe ---
+--- Market Reality card reframe + hero refinement ---
 e21dc2a fix(market-reality): rewrite three cards with institutional gap framing
 fa04cba feat(market-reality): add gold dash-diamond-dash ornament to three cards
 d8d7a9e fix: center gold ornaments on Market Reality cards
 641a20a docs: update build doc with Market Reality card reframe and full commit history
---- Hero and card copy refinements ---
 7bf225e fix(hero): remove 'The pages that follow are the answer' tagline
 4eaef2c fix(market-reality): rewrite 'The piece that exists' card body
 bbeeb24 fix(market-reality): rewrite 'The environment that does not exist' card body
+0b8b25b docs: update build doc with hero tagline removal and card body rewrites
 ```
